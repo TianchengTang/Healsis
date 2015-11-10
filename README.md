@@ -1,25 +1,20 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
+# [Healsis](http://toubib.org/)
 
-[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
+This project is a dashboard web app designed to cooperate with [NanoHealth](http://www.nanohealth.com). NanoHealth is a social enterprise specializing in chronic disease management and health care. They create local health networks and use innovative technology to bring cost-effective health care at the doorstep of urban slums in India. Our mission is to use data analyse algorithm to calculate certain chronic disease trend and visualize those health data to both doctors and patients.
 
 ## Getting Started
 
-To use this theme, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+To use this service, to go [Healsis](http://toubib.org/)
 
-## Bugs and Issues
+To contribute to this web app, Fork this repository on GitHub
 
-Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
 
 ## Creator
 
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Partner at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
+Healsis is created by and is maintained by **Healsis team @Boston University**, under the instruction of Prof. Alshaykh Osama.
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+This web app is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
 ## Copyright and License
 
