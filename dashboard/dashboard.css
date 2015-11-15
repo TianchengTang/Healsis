@@ -13,6 +13,7 @@ body {
  */
 
 .sub-header {
+  font-size: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
@@ -93,9 +94,20 @@ body {
   }
 }
 .main .page-header {
+  font-size: 24px;
   margin-top: 0;
 }
 
+.input-item-name {
+  text-align:right;
+  padding-top:3px;
+}
+
+.input-field {
+  height: 30px;
+  width: 220px;
+  margin-bottom:20px;
+}
 
 /*
  * Placeholder dashboard ideas
