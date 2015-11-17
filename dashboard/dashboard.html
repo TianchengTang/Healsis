@@ -33,8 +33,8 @@
           <a class="navbar-brand" href="#">Healsis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-			<button type="button" class="btn btn-sm btn-default" href="./../index.html" 
-			 style="font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right">Logout</button>
+			<a href="./../index.html" type="button" class="btn btn-sm btn-default"  
+			 style="font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right">Logout</a>
         </div>
       </div>
     </nav>
@@ -76,12 +76,12 @@
 		    <!-- Input Column 1/2 -->
 		    <div class="col-md-5">			
 			  <div class="row">
-				<label class="item-name col-md-5">Text Input</label>
-				<input class="form-control input-field col-md-7">
+				<label class="item-name col-md-5">Patient ID</label>
+				<input id="txtFd_PatientID" class="form-control input-field col-md-7">
 			  </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Area</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtFd_Area" class="form-control select-list col-md-7">
 					<option>Area 1</option>
 					<option>Area 2</option>
 					<option>Area 3</option>
@@ -89,7 +89,7 @@
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Location</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtFd_Location" class="form-control select-list col-md-7">
 					<option>Location 1</option>
 					<option>Location 2</option>
 					<option>Location 3</option>
@@ -99,11 +99,11 @@
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Last Visit After</label>
-				<input class="form-control input-field col-md-7" placeholder=" mm/dd/yy">
+				<input id="txtFd_LastVisitAfter" class="form-control input-field col-md-7" placeholder=" mm/dd/yy">
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Last Visit Before</label>
-				<input class="form-control input-field col-md-7" placeholder=" mm/dd/yy">
+				<input id="txtFd_LastVisitBefore" class="form-control input-field col-md-7" placeholder=" mm/dd/yy">
               </div>			  
 			</div>
 			
@@ -129,9 +129,10 @@
 		  </div>
 		  
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div class="row" style="margin:auto; width:30%">
-			<button type="button" class="btn btn-sm btn-default btn-big">Search</button>
+		  <div id="btn_SearchPatients" class="row" style="margin:auto; width:30%; margin-top:5px">
+			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickSearchPatients()">Search</button>
 		  </div>
+		  <p id="haha"></p>
 		  
 		  <!-- Table of Searching Results -->
           <div class="table-responsive" style="margin-top:30px">
@@ -172,8 +173,8 @@
           </div>
 		  
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div class="row" style="margin:auto; width:38%">
-			<button type="button" class="btn btn-sm btn-default btn-big">Show More Details</button>
+		  <div class="row" style="margin:auto; width:38%; margin-top:5px">
+			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickShowMoreDetails()">Show More Details</button>
 		  </div>
 		  
         </div>
@@ -189,5 +190,25 @@
     <script src="../../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+	<script>
+		function clickSearchPatients() {
+
+			var patientID = document.getElementById("txtFd_PatientID").value;
+			var area = document.getElementById("txtFd_Area").value;
+			var location = document.getElementById("txtFd_Location").value;
+			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
+			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
+			
+			confirm(patientID+area + location);
+		}
+	</script>
+
+	<script>
+		function clickShowMoreDetails() {
+			confirm("Not functional yet");
+		}
+	</script>
+	
   </body>
 </html>
