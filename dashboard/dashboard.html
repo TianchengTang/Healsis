@@ -20,6 +20,7 @@
 
   <body style="background-color: #F6F6F6">
 
+    <!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid" style="background-color: #FFF">
         <div class="navbar-header">
@@ -29,11 +30,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img style="float:left; padding-top:5px; margin-right:20px" src="./../img/logo.png" height="15%" width="15%">
+		  <img style="float:left; padding-top:5px; margin-right:20px" src="../img/logo.png" height="15%" width="15%">
           <a class="navbar-brand" href="#">Healsis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-			<a href="./../index.html" type="button" class="btn btn-sm btn-default"  
+			<a href="../index.html" type="button" class="btn btn-sm btn-default"  
 			 style="font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right">Logout</a>
         </div>
       </div>
@@ -47,16 +48,16 @@
 		  <div class="nav-sidebar-subtitle">Data Base</div>  
           <ul class="nav nav-sidebar">
             <li class="active"><a href="dashboard.html">Client Data Inquiry</a></li>
-            <li><a href="#">Client Data Update</a></li>
-            <li><a href="#">Neighborhood Statistics</a></li>
-            <li><a href="#">Staff Contact Info</a></li>
-			<li><a href="#">My Profile</a></li>
+            <li><a href="sub_pages/patient_data_update.html">Client Data Update</a></li>
+            <li><a href="sub_pages/neighbor_stat.html">Neighborhood Statistics</a></li>
+            <li><a href="sub_pages/staff_contact.html">Staff Contact Info</a></li>
+			<li><a href="sub_pages/my_profile.html">My Profile</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Task Center</div> 
           <ul class="nav nav-sidebar">
-            <li><a href="#">Assgin Tasks</a></li>
-            <li><a href="#">My Tasks</a></li>
-            <li><a href="#">Generate Reg Key</a></li>
+            <li><a href="sub_pages/assign_tasks.html">Assgin Tasks</a></li>
+            <li><a href="sub_pages/my_tasks.html">My Tasks</a></li>
+            <li><a href="sub_pages/generate_reg.html">Generate Reg Key</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Personal Health</div>
           <ul class="nav nav-sidebar">
@@ -68,8 +69,8 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Client Data Inquiry</h1>
 
-		  <!-- Sub-Header 
-          <h2 class="sub-header">Section title</h2> -->
+		  <!-- Section Title -> 
+          <!-- <h2 class="sub-header">Section title</h2> -->
 		  
 		  <div class="row">
 		  
@@ -132,7 +133,6 @@
 		  <div id="btn_SearchPatients" class="row" style="margin:auto; width:30%; margin-top:5px">
 			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickSearchPatients()">Search</button>
 		  </div>
-		  <p id="haha"></p>
 		  
 		  <!-- Table of Searching Results -->
           <div class="table-responsive" style="margin-top:30px">
@@ -173,7 +173,7 @@
           </div>
 		  
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div class="row" style="margin:auto; width:38%; margin-top:5px">
+		  <div class="row" style="margin:auto; width:30%; margin-top:5px">
 			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickShowMoreDetails()">Show More Details</button>
 		  </div>
 		  
