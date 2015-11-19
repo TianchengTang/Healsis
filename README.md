@@ -65,10 +65,14 @@ In this category, doctors have the authority to get all the information includin
 If all the blanks are empty, they the website shows "Please fill in something" after clicking the search button.
 After click the search button, all the inquired information will be shown in a table detailedly.
 
+![ClientDateInquiry](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/ClientDataInquiry.PNG)
+
 ####Client Data Update####
 
 After input the patient ID, and press the "Find" button, all the following data of this patient will be automatically shown up. If the input Patient ID does not exist, the website will inform the user in a red sentence.
 When finish updating, users can click the "Update" button to store the decent data.
+
+![ClientDataUpdate](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/ClientDataUpdate.PNG)
 
 ####Neighborhood Statistics####
 
