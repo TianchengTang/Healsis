@@ -12,7 +12,7 @@ body {
  */
 
 .sub-header {
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
@@ -103,10 +103,14 @@ body {
   padding-top:3px;
 }
 
-.input-field, .select-list{
+.input-field, .select-list {
   height: 30px;
   width: 220px;
   margin-bottom:20px;
+}
+
+.input-area {
+
 }
 
 .btn-big {
