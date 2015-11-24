@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="icon" href="../public/images/logos/3.ico">
+    <link rel="icon" href="images/logos/3.ico">
 
     <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../public/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../public/stylesheets/dashboard.css" rel="stylesheet">
+    <link href="stylesheets/dashboard.css" rel="stylesheet">
     <!-- CSS of sb-admin templates -->
-    <link href="../public/stylesheets/sb-admin.css" rel="stylesheet">
+    <link href="stylesheets/sb-admin.css" rel="stylesheet">
 	
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>	
 
@@ -32,11 +32,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img style="float:left; padding-top:5px; margin-right:20px" src="../public/images/logo.png" height="15%" width="15%">
+		  <img style="float:left; padding-top:5px; margin-right:20px" src="images/logo.png" height="15%" width="15%">
           <a class="navbar-brand" href="#">Healsis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-			<a href="index.html" type="button" class="btn btn-sm btn-default"  
+			<a href="index.jade" type="button" class="btn btn-sm btn-default"  
 			 style="font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right">Logout</a>
         </div>
       </div>
@@ -49,17 +49,17 @@
 		<div class="col-sm-3 col-md-2 sidebar">
 		  <div class="nav-sidebar-subtitle">Data Base</div>  
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="dashboard.html">Client Data Inquiry</a></li>
-            <li><a href="dashboard_sub_pages/patient_data_update.html">Client Data Update</a></li>
-            <li><a href="dashboard_sub_pages/neighbor_stat.html">Neighborhood Statistics</a></li>
-            <li><a href="dashboard_sub_pages/staff_contact.html">Staff Contact Info</a></li>
-			<li><a href="dashboard_sub_pages/my_profile.html">My Profile</a></li>
+            <li class="active"><a href="dashboard.jade">Client Data Inquiry</a></li>
+            <li><a href="dashboard_sub_pages/patient_data_update.jade">Client Data Update</a></li>
+            <li><a href="dashboard_sub_pages/neighbor_stat.jade">Neighborhood Statistics</a></li>
+            <li><a href="dashboard_sub_pages/staff_contact.jade">Staff Contact Info</a></li>
+			<li><a href="dashboard_sub_pages/my_profile.jade">My Profile</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Task Center</div> 
           <ul class="nav nav-sidebar">
-            <li><a href="dashboard_sub_pages/assign_tasks.html">Assgin Tasks</a></li>
-            <li><a href="dashboard_sub_pages/my_tasks.html">My Tasks</a></li>
-            <li><a href="dashboard_sub_pages/generate_reg.html">Generate Reg Key</a></li>
+            <li><a href="dashboard_sub_pages/assign_tasks.jade">Assgin Tasks</a></li>
+            <li><a href="dashboard_sub_pages/my_tasks.jade">My Tasks</a></li>
+            <li><a href="dashboard_sub_pages/generate_reg.jade">Generate Reg Key</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Personal Health</div>
           <ul class="nav nav-sidebar">
@@ -152,24 +152,31 @@
 					<th>Blood Sugar</th>			
 					<th>Diabetes</th>
 					<th>Urination Count</th>
+					<th>Dry Tongue</th>
 				</tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>p1287890</td>
-                  <td></td>
-                  <td></td>
+                  <td id="table_Row1_PatientID"></td>
+                  <td id="table_Row1_Gender"></td>
+                  <td id="table_Row1_Age"></td>
+				  <td id="table_Row1_Location"></td>
+				  <td id="table_Row1_Area"></td>
+				  <td id="table_Row1_City"></td>
+				  <td id="table_Row1_Hypertension"></td>
+				  <td id="table_Row1_BldPressure"></td>
+				  <td id="table_Row1_BldSugar"></td>
+				  <td id="table_Row1_Diabetes"></td>
+				  <td id="table_Row1_UriCount"></td>
+				  <td id="table_Row1_DryTongue"></td>
                 </tr>
-                <tr>
+                <!--
+				<tr>
                   <td>p1829881</td>
                   <td></td>
                   <td></td>
-                </tr>
-                <tr>
-                  <td>p0099221</td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                </tr> -->
+
               </tbody>
             </table>
           </div>
@@ -190,14 +197,24 @@
 
 	<script>
 		function clickSearchPatients() {
-
 			var patientID = document.getElementById("txtFd_PatientID").value;
-			var area = document.getElementById("txtFd_Area").value;
-			var location = document.getElementById("txtFd_Location").value;
+			var area = document.getElementById("txtSel_Area").value;
+			var location = document.getElementById("txtSel_Location").value;
 			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
 			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
 			
-			confirm(patientID+area + location);
+			document.getElementById("table_Row1_PatientID").innerHTML = patientID;
+			document.getElementById("table_Row1_Gender").innerHTML = "Female";
+			document.getElementById("table_Row1_Age").innerHTML = 38;
+			document.getElementById("table_Row1_Location").innerHTML = "FatehNagar";
+			document.getElementById("table_Row1_Area").innerHTML = "Kulkatpally";
+			document.getElementById("table_Row1_City").innerHTML = "Hyderbad";
+			document.getElementById("table_Row1_Hypertension").innerHTML = "No";
+			document.getElementById("table_Row1_BldPressure").innerHTML = "110/82";
+			document.getElementById("table_Row1_BldSugar").innerHTML = 130;
+			document.getElementById("table_Row1_Diabetes").innerHTML = "Yes";
+			document.getElementById("table_Row1_UriCount").innerHTML = 3;
+			document.getElementById("table_Row1_DryTongue").innerHTML = "No";			
 		}
 	</script>
 

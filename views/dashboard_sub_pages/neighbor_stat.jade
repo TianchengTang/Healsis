@@ -1,0 +1,171 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    link(rel='icon', href='../images/logos/3.ico')
+    |     
+    title Dashboard
+    // Bootstrap core CSS
+    link(href='../stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='../stylesheets/dashboard.css', rel='stylesheet')
+    // CSS of sb-admin templates
+    link(href='../stylesheets/sb-admin.css', rel='stylesheet')
+    // Morris Charts CSS
+    link(href='../stylesheets/plugins/morris.css', rel='stylesheet')
+    | &#x9;
+    |     
+    script(src='../../../assets/js/ie-emulation-modes-warning.js')
+  |   
+  body(style='background-color: #F6F6F6')
+    // Header
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid(style='background-color: #FFF')
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            |             
+            span.icon-bar
+            |             
+            span.icon-bar
+            |             
+            span.icon-bar
+          | &#x9;&#x9;  
+          img(style='float:left; padding-top:5px; margin-right:20px', src='../images/logo.png', height='15%', width='15%')
+          |           
+          a.navbar-brand(href='#') Healsis
+        |         
+        #navbar.navbar-collapse.collapse
+          a.btn.btn-sm.btn-default(href='../index.jade', type='button', style='font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right') Logout
+    |     
+    .container-fluid
+      .row
+        // Navigation Bar
+        .col-sm-3.col-md-2.sidebar
+          .nav-sidebar-subtitle Data Base
+          |   
+          |           
+          ul.nav.nav-sidebar
+            li.active
+              a(href='../dashboard.jade') Client Data Inquiry
+            |             
+            li
+              a(href='patient_data_update.jade') Client Data Update
+            |             
+            li
+              a(href='neighbor_stat.jade') Neighborhood Statistics
+            |             
+            li
+              a(href='staff_contact.jade') Staff Contact Info
+            | &#x9;&#x9;&#x9;
+            li
+              a(href='my_profile.jade') My Profile
+          | &#x9;&#x9;  
+          .nav-sidebar-subtitle Task Center
+          |  
+          |           
+          ul.nav.nav-sidebar
+            li
+              a(href='assign_tasks.jade') Assgin Tasks
+            |             
+            li
+              a(href='my_tasks.jade') My Tasks
+            |             
+            li
+              a(href='generate_reg.jade') Generate Reg Key
+          | &#x9;&#x9;  
+          .nav-sidebar-subtitle Personal Health
+          |           
+          ul.nav.nav-sidebar
+            li
+              a(href='#') My H-Graph
+        // Main Frame
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          h1.page-header Neighborhood Statistics
+          // Section Title
+          h2.sub-header General Health Condition (Good / Normal / Bad) by Locations
+          | &#x9;&#x9;  
+          | &#x9;&#x9;  
+          .row
+            // Column 1/2
+            .col-md-8
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    i.fa.fa-long-arrow-right
+                    | General Health Condition
+                | &#x9;&#x9;&#x9;&#x9;&#x9;
+                .panel-body
+                  #morris-donut-chart
+                    svg(height='352', version='1.1', width='557', xmlns='http://www.w3.org/2000/svg', style='overflow: hidden; \
+                    position: relative;')
+                      desc(style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);') Created with Rapha??l 2.1.2
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      defs(style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      path(fill='none', stroke='#0b62a4', d='M278.5,290.8333333333333A112.33333333333333,112.33333333333333,0,0,0,384.5483986027914,215.54746862555191', stroke-width='2', opacity='0', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      path(fill='#0b62a4', stroke='#ffffff', d='M278.5,293.8333333333333A115.33333333333333,115.33333333333333,0,0,0,387.3805516812042,216.53686689745092L432.852342773499,232.4222058184962A163.5,163.5,0,0,1,278.5,342Z', stroke-width='3', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      path(fill='none', stroke='#3980b5', d='M384.5483986027914,215.54746862555191A112.33333333333333,112.33333333333333,0,0,0,177.72832001158343,128.8628537273753', stroke-width='2', opacity='1', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      path(fill='#3980b5', stroke='#ffffff', d='M387.3805516812042,216.53686689745092A115.33333333333333,115.33333333333333,0,0,0,175.03708820180378,127.53723261030224L127.34248001737515,104.04428059106294A168.5,168.5,0,0,1,437.5725979041871,234.07120293832787Z', stroke-width='3', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      path(fill='none', stroke='#679dc6', d='M177.72832001158343,128.8628537273753A112.33333333333333,112.33333333333333,0,0,0,278.4647094431052,290.8333277899056', stroke-width='2', opacity='0', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;')
+                      path(fill='#679dc6', stroke='#ffffff', d='M175.03708820180378,127.53723261030224A115.33333333333333,115.33333333333333,0,0,0,278.4637669653246,293.8333276418615L278.44863496095877,341.9999919315985A163.5,163.5,0,0,1,131.82786636700794,106.25364911951806Z', stroke-width='3', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      text(x='278.5', y='168.5', text-anchor='middle', font='10px "Arial"', stroke='none', fill='#000000', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;', font-size='15px', font-weight='800', transform='matrix(2.022,0,0,2.022,-284.627,-181.405)', stroke-width='0.4945598417408507')
+                        tspan(dy='5', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);') Good
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      text(x='278.5', y='188.5', text-anchor='middle', font='10px "Arial"', stroke='none', fill='#000000', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;', font-size='14px', transform='matrix(2.3403,0,0,2.3403,-373.2674,-241.9201)', stroke-width='0.427299703264095')
+                        tspan(dy='5', style='-webkit-tap-highlight-color: rgba(0, 0, 0, 0);') 30%
+            // Column 2/2
+            .col-md-4
+              .row
+                label.item-name.col-md-5 Location
+                | &#x9;&#x9;&#x9;&#x9;
+                select#txtSel_Location.form-control.select-list.col-md-7
+                  option Location
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;
+                  option FatehNagar
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;
+                  option RamakrishnaNagar
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;
+                  option Indiragandhipuram
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;
+                  option JanathaNagar
+          // Section Title
+          h2.sub-header Hypertension Condition (Suffered / High Risk / Low Risk) by Locations
+          // Section Title
+          h2.sub-header Diabetes Condition (Suffered / High Risk / Low Risk) by Locations
+    // Scripts are placed at the end of the document so the pages load faster
+    // Bootstrap core JavaScript
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    |     
+    script(src='../javascripts/bootstrap.min.js')
+    // jQuery
+    script(src='../javascripts/jquery.js')
+    // Morris Charts JavaScript
+    script(src='../javascripts/plugins/morris/raphael.min.js')
+    |     
+    script(src='../javascripts/plugins/morris/morris.min.js')
+    |     
+    script(src='../javascripts/plugins/morris/morris-data.js')
+    // Flot Charts JavaScript
+    //if lte IE 8
+      script(src='js/excanvas.min.js')
+    |     
+    script(src='../javascripts/plugins/flot/jquery.flot.js')
+    |     
+    script(src='../javascripts/plugins/flot/jquery.flot.tooltip.min.js')
+    |     
+    script(src='../javascripts/plugins/flot/jquery.flot.resize.js')
+    |     
+    script(src='../javascripts/plugins/flot/jquery.flot.pie.js')
+    |     
+    script(src='../javascripts/plugins/flot/flot-data.js')

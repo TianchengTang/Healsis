@@ -7,16 +7,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var mongoose = require('mongoose');
 
 var app = express();
 
-//set view engine to apply html files
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine("html", require("ejs").__express);
-app.set('view engine', 'html');
-//// set view engine to apply ejs files
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -36,6 +33,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+
 // error handlers
 
 // development error handler
@@ -48,7 +46,16 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
+  //mongoose.connect('mongodb://??.??.??.?/serverName');
 }
+
+//mongoose.model('users', {name: String});
+
+/* app.get('/users', function(req, res) {
+  mongoose.model('users').find(function(err, users) {
+    res.send(users);
+  });
+}); */
 
 // production error handler
 // no stacktraces leaked to user
