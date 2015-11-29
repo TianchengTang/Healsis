@@ -43,7 +43,7 @@ angular.module('healsis.loginCtrl', ['healsis.dataServices', 'healsis.sharedServ
         $scope.login = function (cellphone, password) {
             $scope.showSpinner = true;
             if (cellphone.match(/\d/g) === null || cellphone.match(/\d/g).length !== 11) {
-                $scope.loginData.errorInfo = '请输入正确的手机号！';
+                $scope.loginData.errorInfo = 'Please retype your cellphone';
                 $scope.showSpinner = false;
                 $scope.$digest();
                 // alert($scope.loginData.errorInfo);

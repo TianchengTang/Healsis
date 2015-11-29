@@ -9,7 +9,7 @@ angular.module('healsis.registerCtrl', ['healsis.dataServices', 'healsis.sharedS
         //*********************
         //  data
         //*********************
-        var default_op = {id: 0, name: "未选择"};
+        var default_op = {id: 0, name: "not select"};
         $scope.registerData = {
             name: "",
             cellphone: '',
@@ -18,7 +18,6 @@ angular.module('healsis.registerCtrl', ['healsis.dataServices', 'healsis.sharedS
             verification: "",
             applyLetter: "",
             Province: default_op,
-            School: default_op,
             agreeMe: false
         };
 
@@ -46,16 +45,16 @@ angular.module('healsis.registerCtrl', ['healsis.dataServices', 'healsis.sharedS
         //  method
         //*********************
 
-        // 注册大使
+        // register
         $scope.registerAmbassador = function () {
             console.log("registerAmbassador ...");
             $scope.showSpinner = true;
             if ($scope.registerData.cellphone.match(/\d/g) === null || $scope.registerData.cellphone.match(/\d/g).length !== 11) {
-                $scope.registerData.errorInfo = '请输入正确的手机号！';
+                $scope.registerData.errorInfo = 'please enter the right verification code';
                 $scope.showSpinner = false;
                 $scope.$digest();
             } else if ($scope.registerData.School === default_op) {
-                $scope.registerData.errorInfo = "请选择学校！";
+                $scope.registerData.errorInfo = "please select region";
                 $scope.showSpinner = false;
                 $scope.$digest();
             } else {
@@ -75,11 +74,11 @@ angular.module('healsis.registerCtrl', ['healsis.dataServices', 'healsis.sharedS
             }
         };
 
-        // 发送验证验证码
+        // verification
         $scope.sendMessage = function (phone) {
             console.log("sendMessage ...");
             if (phone.match(/\d/g) === null || phone.match(/\d/g).length !== 11) {
-                $scope.registerData.errorInfo = '请输入正确的手机号！';
+                $scope.registerData.errorInfo = 'verification fialed';
                 $scope.$digest();
                 // alert($scope.loginData.errorInfo);
                 return;
@@ -94,7 +93,7 @@ angular.module('healsis.registerCtrl', ['healsis.dataServices', 'healsis.sharedS
             }
         };
 
-        // 省份改变
+        //
         $scope.onProvinceChanged = function () {
             console.log("onProvinceChanged ...");
 
