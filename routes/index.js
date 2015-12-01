@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/index.jade', function(req, res, next) {
+/* router.get('/index.jade', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
@@ -47,6 +47,7 @@ router.get('/dashboard_sub_pages/generate_reg.jade', function(req, res, next) {
   res.render('dashboard_sub_pages/generate_reg', { title: 'Express' });
 });
 
+*/
 
 
 module.exports = router;

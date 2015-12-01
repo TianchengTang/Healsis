@@ -10,16 +10,16 @@ var users = require('./routes/users');
 var mongoose = require('mongoose');
 
 var app = express();
+
 // a convenient variable to refer to the HTML directory
 var html_dir = './html/';
-
 // routes to serve the static HTML files
 //route names need not match the file name
-app.get('/contact', function(req, res) {
-    res.sendfile(html_dir + 'contact.html');
+app.get('/index', function(req, res) {
+    res.sendfile(html_dir + 'index.html');
 });
-app.get('/hello', function(req, res) {
-    res.sendfile(html_dir + 'hello.html');
+app.get('/dashboard', function(req, res) {
+    res.sendfile(html_dir + 'dashboard.html');
 });
 
 
