@@ -13,6 +13,10 @@ var app = express();
 
 // a convenient variable to refer to the HTML directory
 var html_dir = './html/';
+// html as static files
+app.use(express.static(path.join(__dirname, 'html')));
+// view engine setup
+app.set('view engine', 'html');
 // routes to serve the static HTML files
 //route names need not match the file name
 app.get('/index', function(req, res) {
@@ -26,8 +30,7 @@ app.get('/dashboard', function(req, res) {
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, 'html')));
-app.set('view engine', 'html');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
