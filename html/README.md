@@ -1,4 +1,4 @@
-#Website Manual#
+b#Website Manual#
 
 
 ###I. Introduction to Healsis###
@@ -13,17 +13,17 @@ We are currently graduate students of Boston University.
 Team members: Chang Yan, Da Shu, Tiancheng Tang, Xin Li, Xuanyi Chen
 
 ###II. Website Structures###
-![WebsiteMap](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/Website_Map.png)
+![WebsiteMap](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/Website_Map.png)
 
 ###III. Develop Tools###
 Basically, we use MEAN, which contains AngularJS, MongoDB, NodeJS, and Express, to construct our front end and back end. We registered an AWS account to deal with the web service. For source control, we use Github as the tool. To be more efficient, we chose Teambition as the scrum management tool to help us monitor the whole project.
 
 ###IV. Basic Functions###
 ####For Common User####
-![CommonUser](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/CommonUser.png)
+![CommonUser](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/CommonUser.png)
 
 ####For Registered User####
-![RegisterUser](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/RegisterUser.png)
+![RegisterUser](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/RegisterUser.png)
 
 ###V. Getting Started - Creating An Account###
 ####Creating your account####
@@ -47,12 +47,12 @@ The dashboard is the central hub for this website. It is where doctors, clients,
 
 ###VII. Website Tools###
 ####Homepage####
-![Homepage](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/homepage.PNG)
+![Homepage](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/homepage.PNG)
 In the homepage, people can see the introduction about our services, features, work flow, and staffs, no matter they are register users or common users.
 
-![Service](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/service.PNG)
-![Features](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/features.PNG)
-![Workflow](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/workflow.PNG)
+![Service](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/service.PNG)
+![Features](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/features.PNG)
+![Workflow](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/workflow.PNG)
 ![People](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/people.PNG)
 
 People can also contact us using our system.
