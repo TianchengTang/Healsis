@@ -53,7 +53,7 @@ In the homepage, people can see the introduction about our services, features, w
 ![Service](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/service.PNG)
 ![Features](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/features.PNG)
 ![Workflow](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/workflow.PNG)
-![People](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/people.PNG)
+![People](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/people.PNG)
 
 People can also contact us using our system.
 
@@ -78,26 +78,37 @@ When finish updating, users can click the "Update" button to store the decent da
 
 In this part, users can get detail information about general health conditions, hypertension conditions, and diabetes conditions which are sorted by locations. The overall health condition of a patient is calculated and graded by our own algorithm developed based on H-Graph.
 
+![NeighborhoodStatistics](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/neighborhood.PNG)
+
 ####Staff Con tack Info####
 
-This is a search page. First, you can choose the capital letter which represents the staff you want to get access to. The default tab is the "Star(icon)" tab, showing the leadership of the organization which is ordered alphabetically.
-The other tabs are also ordered alphabetically, if clicked, they will not care about whether someone belongs to the leadership or not.
+This is a search page. First, you can choose the capital letter which represents the staff you want to get access to. The default tab is the "Star(icon)" tab, showing the leadership of the organization which is ordered alphabetically. The other tabs are also ordered alphabetically, if clicked, they will not care about whether someone belongs to the leadership or not.
+
+![Staff](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/staff.PNG)
 
 ####My Profile####
 
 When users want to update their personal files, they could finish their job here.
 
+![MyProfile](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/profile.PNG)
+
 ####Assign Tasks####
 
 When doctors want to assign tasks to specifically social workers, they could assign here.
+
+![AssignTasks](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/assign.PNG)
 
 ####My Tasks####
 
 This is where the social workers are decided to take the tasks and finish them.
 
+![MyTasks](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/task.PNG)
+
 ####Generate Registration Key####
 
 First, user should choose their Reg Key Type, Second click "Generate" button. Then the User ID and Registration Key will be showed bellow the button.
+
+![GenerateRegKey](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/regkey.PNG)
 
 ####My H-Graph####
 
