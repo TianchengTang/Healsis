@@ -1,4 +1,4 @@
-b#Website Manual#
+#Website Manual#
 
 
 ###I. Introduction to Healsis###
