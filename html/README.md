@@ -114,7 +114,43 @@ First, user should choose their Reg Key Type, Second click "Generate" button. Th
 
 Developers designed their own algorithms to adept the original H-Graph to a more efficient one.
 
-###VIII. Other Services###
+###VIII. API###
+
+We use APIs to help us connect the frontend and our database. Here are some introductions about them.
+
+####Patient Data Inquiry####
+
+This API helps us to search patient data.
+
+>Code:
+
+	'code will be copied here'
+
+####Check Personal Profile####
+
+This API helps us to check personal profile.
+
+>Code:
+
+	'code will be copied here'
+
+####Staff Contact Info####
+
+This API helps us to get staff's contact information.
+
+>Code:
+
+	'code will be copied here'
+
+####H-Graph Generator####
+
+This API helps us to generate H-Graph.
+
+>Code:
+
+	'code will be copied here'
+
+###IX. Other Services###
 
 If you need any other services, please contact us via our system.
     
