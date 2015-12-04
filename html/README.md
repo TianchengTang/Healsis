@@ -13,17 +13,17 @@ We are currently graduate students of Boston University.
 Team members: Chang Yan, Da Shu, Tiancheng Tang, Xin Li, Xuanyi Chen
 
 ###II. Website Structures###
-![WebsiteMap](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/Website_Map.png)
+![WebsiteMap](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/Website_Map.png)
 
 ###III. Develop Tools###
 Basically, we use MEAN, which contains AngularJS, MongoDB, NodeJS, and Express, to construct our front end and back end. We registered an AWS account to deal with the web service. For source control, we use Github as the tool. To be more efficient, we chose Teambition as the scrum management tool to help us monitor the whole project.
 
 ###IV. Basic Functions###
 ####For Common User####
-![CommonUser](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/CommonUser.png)
+![CommonUser](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/CommonUser.png)
 
 ####For Registered User####
-![RegisterUser](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/RegisterUser.png)
+![RegisterUser](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/RegisterUser.png)
 
 ###V. Getting Started - Creating An Account###
 ####Creating your account####
@@ -47,13 +47,13 @@ The dashboard is the central hub for this website. It is where doctors, clients,
 
 ###VII. Website Tools###
 ####Homepage####
-![Homepage](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/homepage.PNG)
+![Homepage](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/homepage.PNG)
 In the homepage, people can see the introduction about our services, features, work flow, and staffs, no matter they are register users or common users.
 
-![Service](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/service.PNG)
-![Features](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/features.PNG)
-![Workflow](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/workflow.PNG)
-![People](https://github.com/WilliamLeeBravo/Myhealsis/raw/master/people.PNG)
+![Service](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/service.PNG)
+![Features](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/features.PNG)
+![Workflow](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/workflow.PNG)
+![People](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/people.PNG)
 
 People can also contact us using our system.
 
@@ -78,32 +78,79 @@ When finish updating, users can click the "Update" button to store the decent da
 
 In this part, users can get detail information about general health conditions, hypertension conditions, and diabetes conditions which are sorted by locations. The overall health condition of a patient is calculated and graded by our own algorithm developed based on H-Graph.
 
+![NeighborhoodStatistics](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/neighborhood.PNG)
+
 ####Staff Con tack Info####
 
-This is a search page. First, you can choose the capital letter which represents the staff you want to get access to. The default tab is the "Star(icon)" tab, showing the leadership of the organization which is ordered alphabetically.
-The other tabs are also ordered alphabetically, if clicked, they will not care about whether someone belongs to the leadership or not.
+This is a search page. First, you can choose the capital letter which represents the staff you want to get access to. The default tab is the "Star(icon)" tab, showing the leadership of the organization which is ordered alphabetically. The other tabs are also ordered alphabetically, if clicked, they will not care about whether someone belongs to the leadership or not.
+
+![Staff](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/staff.PNG)
 
 ####My Profile####
 
 When users want to update their personal files, they could finish their job here.
 
+![MyProfile](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/profile.PNG)
+
 ####Assign Tasks####
 
 When doctors want to assign tasks to specifically social workers, they could assign here.
+
+![AssignTasks](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/assign.PNG)
 
 ####My Tasks####
 
 This is where the social workers are decided to take the tasks and finish them.
 
+![MyTasks](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/task.PNG)
+
 ####Generate Registration Key####
 
 First, user should choose their Reg Key Type, Second click "Generate" button. Then the User ID and Registration Key will be showed bellow the button.
+
+![GenerateRegKey](https://raw.githubusercontent.com/WilliamLeeBravo/Myhealsis/master/regkey.PNG)
 
 ####My H-Graph####
 
 Developers designed their own algorithms to adept the original H-Graph to a more efficient one.
 
-###VIII. Other Services###
+###VIII. API###
+
+We use APIs to help us connect the frontend and our database. Here are some introductions about them.
+
+####Patient Data Inquiry####
+
+This API helps us to search patient data.
+
+>Code:
+
+	'code will be copied here'
+
+####Check Personal Profile####
+
+This API helps us to check personal profile.
+
+>Code:
+
+	'code will be copied here'
+
+####Staff Contact Info####
+
+This API helps us to get staff's contact information.
+
+>Code:
+
+	'code will be copied here'
+
+####H-Graph Generator####
+
+This API helps us to generate H-Graph.
+
+>Code:
+
+	'code will be copied here'
+
+###IX. Other Services###
 
 If you need any other services, please contact us via our system.
     
