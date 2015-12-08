@@ -209,22 +209,22 @@
 		function loadJsonFile(patientID) {
 
 			var jsonData;
-			$.getJSON('../json/patientData.json', function(data){
+			$.getJSON('../json/newPatients.json', function(data){
 				jsonData = data;
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						document.getElementById("table_Row1_PatientID").innerHTML = jsonData[i].ptnt_rgstrtn_id_tmp;
 						document.getElementById("table_Row1_Gender").innerHTML = jsonData[i].gndr;
 						document.getElementById("table_Row1_Age").innerHTML = jsonData[i].dob;
-						document.getElementById("table_Row1_Location").innerHTML = jsonData[i].Location;
-						document.getElementById("table_Row1_Area").innerHTML = jsonData[i].Area;
+						document.getElementById("table_Row1_Location").innerHTML = jsonData[i].patient_Location;
+						document.getElementById("table_Row1_Area").innerHTML = jsonData[i].patient_Area;
 						document.getElementById("table_Row1_City").innerHTML = jsonData[i].City;
-						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive?;
+						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive;
 						document.getElementById("table_Row1_BldPressure").innerHTML = jsonData[i].bp_systlc + ", " +jsonData[i].bp_dstlc;
 						document.getElementById("table_Row1_BldSugar").innerHTML = jsonData[i].bld_sgr;
-						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic?;
+						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic;
 						document.getElementById("table_Row1_UriCount").innerHTML = jsonData[i].UrinationCount;
-						document.getElementById("table_Row1_DryTongue").innerHTML = jsonData[i].Dry Tongue;
+						document.getElementById("table_Row1_DryTongue").innerHTML = jsonData[i].Dry_Tongue;
 
 			    		break;
 			    	}
