@@ -221,13 +221,11 @@
 	<script>
 		function loadJsonFile() {
 
-
-/*
 			var jsonFile = new XMLHttpRequest();
 			jsonFile.open("GET", "../json/patientData.json", false);
 			jsonFile.send(null);
 			var obj = JSON.parse(jsonFile.responseText);
-		   	alert (jsonFile.result[0]);
+		   	alert (jsonFile[0]);
 
 
 			jsonFile.onreadystatechange = function() {
@@ -244,15 +242,16 @@
 				confirm("middle2");
 
 
-			};	*/
+			};
 
+			/*
 			var myList;
 			$.getJSON('../json/patientData.json')
 			.done(function (data) {
 			myList = data;
 			});	
-			
-			confirm(myList[0].dob);
+			*/
+
 		}
 	</script>
 
