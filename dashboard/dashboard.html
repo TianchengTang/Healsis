@@ -222,13 +222,13 @@
 		function loadJsonFile() {
 
 			var jsonFile = new XMLHttpRequest();
-			jsonFile.open("GET", "../json/patientData.json", true);
+			jsonFile.open('GET', '../json/patientData.json', true);
 			jsonFile.send(null);
 			var obj = JSON.parse(jsonFile.responseText);
-		   	alert (jsonFile[0].dob);
+		   	alert (obj[0].dob);
 
 
-			jsonFile.onreadystatechange = function() {
+			/*jsonFile.onreadystatechange = function() {
 				confirm("middle1");
 
 				var patientID = "30-2901";
@@ -243,6 +243,7 @@
 
 
 			};
+			*/
 
 			/*
 			var myList;
