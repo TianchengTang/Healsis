@@ -222,10 +222,10 @@
 		function loadJsonFile() {
 
 			var jsonFile = new XMLHttpRequest();
-			jsonFile.open("GET", "../json/patientData.json", false);
-			jsonFile.send(null);
+			jsonFile.open("GET", "../json/patientData.json", true);
+
 			var obj = JSON.parse(jsonFile.responseText);
-		   	alert (jsonFile[0]);
+		   	confirm(jsonFile[0].dob);
 
 
 			jsonFile.onreadystatechange = function() {
@@ -243,6 +243,7 @@
 
 
 			};
+			jsonFile.send(null);
 
 			/*
 			var myList;
