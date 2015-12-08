@@ -201,64 +201,37 @@
 			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
 			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
 			
-			document.getElementById("table_Row1_PatientID").innerHTML = patientID;
-			document.getElementById("table_Row1_Gender").innerHTML = "Female";
-			document.getElementById("table_Row1_Age").innerHTML = 38;
-			document.getElementById("table_Row1_Location").innerHTML = "FatehNagar";
-			document.getElementById("table_Row1_Area").innerHTML = "Kulkatpally";
-			document.getElementById("table_Row1_City").innerHTML = "Hyderbad";
-			document.getElementById("table_Row1_Hypertension").innerHTML = "No";
-			document.getElementById("table_Row1_BldPressure").innerHTML = "110/82";
-			document.getElementById("table_Row1_BldSugar").innerHTML = 130;
-			document.getElementById("table_Row1_Diabetes").innerHTML = "Yes";
-			document.getElementById("table_Row1_UriCount").innerHTML = 3;
-			document.getElementById("table_Row1_DryTongue").innerHTML = "No";			
-			
-			loadJsonFile();
+			loadJsonFile(patientID);
 			}
 	</script>
 	
 	<script>
-		function loadJsonFile() {
-
-			/*
-			var jsonFile = new XMLHttpRequest();
-			jsonFile.open('GET', '../json/patientData.json', true);
-			jsonFile.send(null);
-			var obj = JSON.parse(jsonFile.responseText);
-		   	alert (obj[0].dob);
-
-			jsonFile.onreadystatechange = function() {
-				confirm("middle1");
-
-				var patientID = "30-2901";
-
-				//for (var i = 0; i < obj.length; i++){
-					//if (obj[i].ptnt_rgstrtn_id_tmp == patientID){
-						//confirm("Date of Birth: " + obj[i].dob + ", Patient number " + i);
-					//}
-				//}
-				//confirm(obj[2].ptnt_rgstrtn_id_tmp);
-				confirm("middle2");
-
-
-			};
-			*/
-
-			/*
-			var jsonData;
-			$.getJSON('../json/patientData.json')
-			.done(function (data) {
-			jsonData = data;
-			});	
-*/
+		function loadJsonFile(patientID) {
 
 			var jsonData;
 			$.getJSON('../json/patientData.json', function(data){
 				jsonData = data;
-			    //for (var i = 0; i < jsonData.length; i++) {
-			    for (var i = 0; i < 3; i++) {	
-			        confirm(jsonData[i].dob);
+			    for (var i = 0; i < jsonData.length; i++) {	
+			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
+						document.getElementById("table_Row1_PatientID").innerHTML = jsonData[i].ptnt_rgstrtn_id_tmp;
+						document.getElementById("table_Row1_Gender").innerHTML = jsonData[i].gndr;
+						document.getElementById("table_Row1_Age").innerHTML = jsonData[i].dob;
+						document.getElementById("table_Row1_Location").innerHTML = jsonData[i].Location;
+						document.getElementById("table_Row1_Area").innerHTML = jsonData[i].Area;
+						document.getElementById("table_Row1_City").innerHTML = jsonData[i].City;
+						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive?;
+						document.getElementById("table_Row1_BldPressure").innerHTML = jsonData[i].bp_systlc + ", " +jsonData[i].bp_dstlc;
+						document.getElementById("table_Row1_BldSugar").innerHTML = jsonData[i].bld_sgr;
+						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic?;
+						document.getElementById("table_Row1_UriCount").innerHTML = jsonData[i].UrinationCount;
+						document.getElementById("table_Row1_DryTongue").innerHTML = jsonData[i].Dry Tongue;
+
+			    		break;
+			    	}
+			    }
+			    // We didn't find the specific patientID in the list of all the patients
+			    if (i=jsonData.length-1 && jsonData[i].ptnt_rgstrtn_id_tmp ~= patientID) {
+			    	alert ("This patient does not exist, please modify your input.");
 			    }
 			});
 	
