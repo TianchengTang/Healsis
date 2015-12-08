@@ -192,18 +192,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
-	<script>
-		function clickSearchPatients() {
-			var patientID = document.getElementById("txtFd_PatientID").value;
-			var area = document.getElementById("txtSel_Area").value;
-			var location = document.getElementById("txtSel_Location").value;
-			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
-			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
-			
-			loadJsonFile(patientID);
-			}
-	</script>
 	
 	<script>
 		function loadJsonFile(patientID) {
@@ -230,13 +218,23 @@
 			    	}
 			    }
 			    // We didn't find the specific patientID in the list of all the patients
-			    if (i=jsonData.length-1 && jsonData[i].ptnt_rgstrtn_id_tmp ~= patientID) {
+			    if (i=jsonData.length-1 && jsonData[i].ptnt_rgstrtn_id_tmp != patientID) {
 			    	alert ("This patient does not exist, please modify your input.");
 			    }
 			});
-	
-
 		}
+	</script>
+
+	<script>
+		function clickSearchPatients() {
+			var patientID = document.getElementById("txtFd_PatientID").value;
+			var area = document.getElementById("txtSel_Area").value;
+			var location = document.getElementById("txtSel_Location").value;
+			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
+			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
+			
+			loadJsonFile(patientID);
+			}
 	</script>
 
 	<script>
