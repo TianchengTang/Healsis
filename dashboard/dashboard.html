@@ -197,7 +197,7 @@
 		function loadJsonFile(patientID) {
 
 			var jsonData;
-			$.getJSON('../json/newPatients.json', function(data){
+			$.getJSON('../json/patients.json', function(data){
 				jsonData = data;
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
