@@ -223,9 +223,9 @@
 
 			var jsonFile = new XMLHttpRequest();
 			jsonFile.open("GET", "../json/patientData.json", true);
-
+			jsonFile.send(null);
 			var obj = JSON.parse(jsonFile.responseText);
-		   	confirm(jsonFile[0].dob);
+		   	alert (jsonFile[0].dob);
 
 
 			jsonFile.onreadystatechange = function() {
@@ -243,7 +243,6 @@
 
 
 			};
-			jsonFile.send(null);
 
 			/*
 			var myList;
