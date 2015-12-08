@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="icon" href="../../img/logos/3.ico">
+    <link rel="icon" href="../images/logos/3.ico">
 
     <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../dashboard.css" rel="stylesheet">
-
+    <link href="../stylesheets/dashboard.css" rel="stylesheet">
+    <!-- CSS of sb-admin templates -->
+    <link href="../stylesheets/sb-admin.css" rel="stylesheet">
+	
     <script src="../../../assets/js/ie-emulation-modes-warning.js"></script>	
 
   </head>
@@ -30,11 +32,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img style="float:left; padding-top:5px; margin-right:20px" src="../../img/logo.png" height="15%" width="15%">
+		  <img style="float:left; padding-top:5px; margin-right:20px" src="../images/logo.png" height="15%" width="15%">
           <a class="navbar-brand" href="#">Healsis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-			<a href="../../index.html" type="button" class="btn btn-sm btn-default"  
+			<a href="../index.html" type="button" class="btn btn-sm btn-default"  
 			 style="font-size:14px; padding-left:15px; padding-right:15px; margin-top:10px; margin-right:20px; float:right">Logout</a>
         </div>
       </div>
@@ -47,8 +49,8 @@
 		<div class="col-sm-3 col-md-2 sidebar">
 		  <div class="nav-sidebar-subtitle">Data Base</div>  
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="../dashboard.html">Client Data Inquiry</a></li>
-            <li><a href="patient_data_update.html">Client Data Update</a></li>
+            <li><a href="../dashboard.html">Client Data Inquiry</a></li>
+            <li class="selected"><a href="patient_data_update.html">Client Data Update</a></li>
             <li><a href="neighbor_stat.html">Neighborhood Statistics</a></li>
             <li><a href="staff_contact.html">Staff Contact Info</a></li>
 			<li><a href="my_profile.html">My Profile</a></li>
@@ -92,28 +94,28 @@
 			  </div>			  
 			  <div class="row">
 				<label class="item-name col-md-5">Hypertension</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_Hypertension" class="form-control select-list col-md-7">
 					<option>Yes</option>
 					<option>No</option>
 				</select>
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Diabetes</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_Diabetes" class="form-control select-list col-md-7">
 					<option>Yes</option>
 					<option>No</option>
 				</select>
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Hypertension Risk</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_HyperRisk" class="form-control select-list col-md-7">
 					<option>Low</option>
 					<option>High</option>
 				</select>
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Diabetes Risk</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_DiabRisk" class="form-control select-list col-md-7">
 					<option>Low</option>
 					<option>High</option>
 				</select>
@@ -128,11 +130,11 @@
 			  </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Urination Count</label>
-				<input id="txtFd_BloodPressure" class="form-control input-field col-md-7">
+				<input id="txtFd_UriCount" class="form-control input-field col-md-7">
 			  </div>			  
 			  <div class="row">
 				<label class="item-name col-md-5">Dry Tongue</label>
-				<input id="txtFd_BloodSugar" class="form-control input-field col-md-7">
+				<input id="txtFd_DryTongue" class="form-control input-field col-md-7">
 			  </div>			  
 			  
 			</div>
@@ -143,13 +145,13 @@
 		    <div class="col-md-5">
 			  <div class="row">
 				<label class="item-name col-md-5">Gender</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_Gender" class="form-control select-list col-md-7">
 					<option>Female</option>
 					<option>Male</option>
 				</select>
               </div>		  	  
 			  <div class="row">
-				<label class="item-name col-md-5">Height (cm)</label>
+				<label class="item-name col-md-5">Height (Feet)</label>
 				<input id="txtFd_Height" class="form-control input-field col-md-7">
 			  </div>			  
 			  <div class="row">
@@ -158,33 +160,39 @@
 			  </div>			
 			  <div class="row">
 				<label class="item-name col-md-5">Area</label>
-				<select id="txtFd_Area" class="form-control select-list col-md-7">
+				<select id="txtSel_Area" class="form-control select-list col-md-7">
 					<option>Area 1</option>
 					<option>Area 2</option>
-					<option>Area 3</option>
+					<option>Kulkatpally</option>
 				</select>
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Location</label>
-				<select id="txtFd_Location" class="form-control select-list col-md-7">
+				<select id="txtSel_Location" class="form-control select-list col-md-7">
 					<option>Location 1</option>
 					<option>Location 2</option>
 					<option>Location 3</option>
 					<option>Location 4</option>
-					<option>Location 5</option>					
+					<option>FatehNagar</option>					
 				</select>
               </div>
-			</div>
-			<div class="row">
+			  <div class="row">
 				<label class="item-name col-md-5">Comments</label>
-				<textarea id="txtAr_Comments" class="form-control input-area col-md-7" style="maxlength:100px" rows="3"></textarea>
+				<textarea id="txtAr_Comments" class="form-control input-area col-md-7" style="width:220px; height:150px"
+				 maxlength="140"></textarea> <!-- maxlength = max number of the input letters in this text area -->
+			  </div>
+			  <div class="row">
+			    <label class="item-name col-md-5"></label>
+				<p class="col-md-7" style="margin-top:7px; margin-left:-4px">Less than 140 Letters</p>
+			  </div>
 			</div>
+
 			
 		  </div>
 		  
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div id="btn_SearchPatients" class="row" style="margin:auto; width:30%; margin-top:5px">
-			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickSearchPatients()">Update</button>
+		  <div id="btn_Update" class="row" style="margin:auto; width:30%; margin-top:5px">
+			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickUpdate()">Update</button>
 		  </div>
 		  
 		  
@@ -192,16 +200,31 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+	<!-- Scripts are placed at the end of the document so the pages load faster -->
+    <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
 
+    <script>
+		function clickFind() {
+			var patientID = document.getElementById("txtFd_PatientID").value;
+			var area = document.getElementById("txtSel_Area").value;
+			var location = document.getElementById("txtSel_Location").value;
+			
+			document.getElementById("txtSel_Hypertension").value = "No";
+			document.getElementById("txtSel_HyperRisk").value = "High";
+			document.getElementById("txtSel_DiabRisk").value = "High";
+			document.getElementById("txtFd_BloodPressure").value = "110/82";
+			document.getElementById("txtFd_BloodSugar").value = 130;
+			document.getElementById("txtFd_UriCount").value = 3;
+			document.getElementById("txtFd_DryTongue").value = "No";
+			document.getElementById("txtSel_Gender").value = "Female";
+			document.getElementById("txtFd_Height").value = 5;
+			document.getElementById("txtFd_Weight").value = 51.3;
+			document.getElementById("txtSel_Area").value = "Kulkatpally";
+			document.getElementById("txtSel_Location").value = "FatehNagar";			
+		}
+	</script>
 	
   </body>
 </html>
