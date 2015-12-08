@@ -11,10 +11,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS of sb-admin templates -->
+    <link href="../css/sb-admin.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>	
+    <link href="../css/dashboard.css" rel="stylesheet">
 
   </head>
 
@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
           </button>
 		  <img style="float:left; padding-top:5px; margin-right:20px" src="../img/logo.png" height="15%" width="15%">
-          <a class="navbar-brand" href="#">Healsis</a>
+          <a class="navbar-brand">Healsis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<a href="../index.html" type="button" class="btn btn-sm btn-default"  
@@ -47,17 +47,17 @@
 		<div class="col-sm-3 col-md-2 sidebar">
 		  <div class="nav-sidebar-subtitle">Data Base</div>  
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="dashboard.html">Client Data Inquiry</a></li>
-            <li><a href="sub_pages/patient_data_update.html">Client Data Update</a></li>
-            <li><a href="sub_pages/neighbor_stat.html">Neighborhood Statistics</a></li>
-            <li><a href="sub_pages/staff_contact.html">Staff Contact Info</a></li>
-			<li><a href="sub_pages/my_profile.html">My Profile</a></li>
+            <li class="selected"><a href="dashboard.html">Client Data Inquiry</a></li>
+            <li><a href="dashboard_sub_pages/patient_data_update.html">Client Data Update</a></li>
+            <li><a href="dashboard_sub_pages/neighbor_stat.html">Neighborhood Statistics</a></li>
+            <li><a href="dashboard_sub_pages/staff_contact.html">Staff Contact Info</a></li>
+			<li><a href="dashboard_sub_pages/my_profile.html">My Profile</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Task Center</div> 
           <ul class="nav nav-sidebar">
-            <li><a href="sub_pages/assign_tasks.html">Assgin Tasks</a></li>
-            <li><a href="sub_pages/my_tasks.html">My Tasks</a></li>
-            <li><a href="sub_pages/generate_reg.html">Generate Reg Key</a></li>
+            <li><a href="dashboard_sub_pages/assign_tasks.html">Assgin Tasks</a></li>
+            <li><a href="dashboard_sub_pages/my_tasks.html">My Tasks</a></li>
+            <li><a href="dashboard_sub_pages/generate_reg.html">Generate Reg Key</a></li>
           </ul>
 		  <div class="nav-sidebar-subtitle">Personal Health</div>
           <ul class="nav nav-sidebar">
@@ -82,7 +82,7 @@
 			  </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Area</label>
-				<select id="txtFd_Area" class="form-control select-list col-md-7">
+				<select id="txtSel_Area" class="form-control select-list col-md-7">
 					<option>Area 1</option>
 					<option>Area 2</option>
 					<option>Area 3</option>
@@ -90,7 +90,7 @@
               </div>
 			  <div class="row">
 				<label class="item-name col-md-5">Location</label>
-				<select id="txtFd_Location" class="form-control select-list col-md-7">
+				<select id="txtSel_Location" class="form-control select-list col-md-7">
 					<option>Location 1</option>
 					<option>Location 2</option>
 					<option>Location 3</option>
@@ -112,7 +112,7 @@
 		    <div class="col-md-5">
 			  <div class="row">
 				<label class="item-name col-md-5">Hypertension</label>
-				<select class="form-control select-list col-md-7">
+				<select id="txtSel_Hypertension" class="form-control select-list col-md-7">
 					<option>Yes</option>
 					<option>No</option>
 				</select>
@@ -120,7 +120,7 @@
 
 			  <div class="row">
 				<label class="item-name col-md-5">Diabetes</label>
-				<select class="form-control select-list col-md-7">
+				<select id="Diabetes" class="form-control select-list col-md-7">
 					<option>Yes</option>
 					<option>No</option>
 				</select>
@@ -150,24 +150,31 @@
 					<th>Blood Sugar</th>			
 					<th>Diabetes</th>
 					<th>Urination Count</th>
+					<th>Dry Tongue</th>
 				</tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>p1287890</td>
-                  <td></td>
-                  <td></td>
+                  <td id="table_Row1_PatientID"></td>
+                  <td id="table_Row1_Gender"></td>
+                  <td id="table_Row1_Age"></td>
+				  <td id="table_Row1_Location"></td>
+				  <td id="table_Row1_Area"></td>
+				  <td id="table_Row1_City"></td>
+				  <td id="table_Row1_Hypertension"></td>
+				  <td id="table_Row1_BldPressure"></td>
+				  <td id="table_Row1_BldSugar"></td>
+				  <td id="table_Row1_Diabetes"></td>
+				  <td id="table_Row1_UriCount"></td>
+				  <td id="table_Row1_DryTongue"></td>
                 </tr>
-                <tr>
+                <!--
+				<tr>
                   <td>p1829881</td>
                   <td></td>
                   <td></td>
-                </tr>
-                <tr>
-                  <td>p0099221</td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                </tr> -->
+
               </tbody>
             </table>
           </div>
@@ -181,27 +188,54 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+	<!-- Scripts are placed at the end of the document so the pages load faster -->
+    <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	
+	<script>
+		function loadJsonFile(patientID) {
+
+			var jsonData;
+			$.getJSON('../json/newPatients.json', function(data){
+				jsonData = data;
+			    for (var i = 0; i < jsonData.length; i++) {	
+			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
+						document.getElementById("table_Row1_PatientID").innerHTML = jsonData[i].ptnt_rgstrtn_id_tmp;
+						document.getElementById("table_Row1_Gender").innerHTML = jsonData[i].gndr;
+						document.getElementById("table_Row1_Age").innerHTML = jsonData[i].dob;
+						document.getElementById("table_Row1_Location").innerHTML = jsonData[i].patient_Location;
+						document.getElementById("table_Row1_Area").innerHTML = jsonData[i].patient_Area;
+						document.getElementById("table_Row1_City").innerHTML = jsonData[i].City;
+						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive;
+						document.getElementById("table_Row1_BldPressure").innerHTML = jsonData[i].bp_systlc + ", " +jsonData[i].bp_dstlc;
+						document.getElementById("table_Row1_BldSugar").innerHTML = jsonData[i].bld_sgr;
+						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic;
+						document.getElementById("table_Row1_UriCount").innerHTML = jsonData[i].UrinationCount;
+						document.getElementById("table_Row1_DryTongue").innerHTML = jsonData[i].Dry_Tongue;
+
+			    		break;
+			    	}
+			    }
+			    // We didn't find the specific patientID in the list of all the patients
+			    if (i==jsonData.length && jsonData[i].ptnt_rgstrtn_id_tmp != patientID) {
+			    	alert ("This patient does not exist, please modify your input.");
+			    }
+			    confirm(patientID + ", i = " + i);
+			});
+		}
+	</script>
 
 	<script>
 		function clickSearchPatients() {
-
 			var patientID = document.getElementById("txtFd_PatientID").value;
-			var area = document.getElementById("txtFd_Area").value;
-			var location = document.getElementById("txtFd_Location").value;
+			var area = document.getElementById("txtSel_Area").value;
+			var location = document.getElementById("txtSel_Location").value;
 			<!--var lastVisitAfter = document.getElementById("txtFd_lastVisitAfter").value;
 			<!--var lastVisitBefore = document.getElementById("txtFd_lastVisitBefore").value;
 			
-			confirm(patientID+area + location);
-		}
+			loadJsonFile(patientID);
+			}
 	</script>
 
 	<script>
