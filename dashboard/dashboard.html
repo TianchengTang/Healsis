@@ -256,9 +256,9 @@
 			var jsonData;
 			$.getJSON('../json/patientData.json', function(data){
 				jsonData = data;
-			    //for (var i = 0; i < data.length; i++) {
+			    //for (var i = 0; i < jsonData.length; i++) {
 			    for (var i = 0; i < 3; i++) {	
-			        confirm(data[i]);
+			        confirm(jsonData[i].dob);
 			    }
 			});
 	
