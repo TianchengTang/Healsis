@@ -15,8 +15,6 @@
     <link href="../css/sb-admin.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
-	
-    <script src="../js/ie-emulation-modes-warning.js"></script>	
 
   </head>
 
@@ -215,6 +213,46 @@
 			document.getElementById("table_Row1_Diabetes").innerHTML = "Yes";
 			document.getElementById("table_Row1_UriCount").innerHTML = 3;
 			document.getElementById("table_Row1_DryTongue").innerHTML = "No";			
+			
+			loadJsonFile();
+			}
+	</script>
+	
+	<script>
+		function loadJsonFile() {
+
+
+/*
+			var jsonFile = new XMLHttpRequest();
+			jsonFile.open("GET", "../json/patientData.json", false);
+			jsonFile.send(null);
+			var obj = JSON.parse(jsonFile.responseText);
+		   	alert (jsonFile.result[0]);
+
+
+			jsonFile.onreadystatechange = function() {
+				confirm("middle1");
+
+				var patientID = "30-2901";
+
+				//for (var i = 0; i < obj.length; i++){
+					//if (obj[i].ptnt_rgstrtn_id_tmp == patientID){
+						//confirm("Date of Birth: " + obj[i].dob + ", Patient number " + i);
+					//}
+				//}
+				//confirm(obj[2].ptnt_rgstrtn_id_tmp);
+				confirm("middle2");
+
+
+			};	*/
+
+			var myList;
+			$.getJSON('../json/patientData.json')
+			.done(function (data) {
+			myList = data;
+			});		
+			
+
 		}
 	</script>
 
