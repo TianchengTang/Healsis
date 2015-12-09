@@ -221,7 +221,7 @@
 			    // We didn't find the specific patientID in the list of all the patients
 			    if ((i==jsonData.length) && (jsonData[i-1].ptnt_rgstrtn_id_tmp!=patientID)) {
 			    	alert ("This patient does not exist, please modify your input.");
-			    	confirm(jsonData[i-1].toString());
+			    	confirm(JSON.stringnify(jsonData[i-1]));
 			    }
 			});
 		}
