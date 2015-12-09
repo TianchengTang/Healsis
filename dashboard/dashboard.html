@@ -185,7 +185,7 @@
 		  </div>
 
 		  <div class="row" style="margin-top:20px; margin-bottom:20px">
-			<label id="lbl_DetailPatientInfo" style="background-color:white; font-style:normal"></label>
+			<label id="lbl_DetailPatientInfo" style="background-color:white; font-weight:normal"></label>
 		  </div>
 		  
         </div>
@@ -254,8 +254,8 @@
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						// JSON.stringify() - Display all the info of a patient in a string
-						document.getElementById("lbl_DetailPatientInfo").innerHTML = 
-							"Complete infomation of this patient: \n \n" + JSON.stringify(jsonData[i]);
+						var detailInfo = "Complete infomation of this patient: \n\n" + JSON.stringify(jsonData[i]);
+						document.getElementById("lbl_DetailPatientInfo").innerHTML = detailInfo;							
 			    		break;
 			    	}
 			    }
