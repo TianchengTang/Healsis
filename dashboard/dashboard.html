@@ -254,7 +254,7 @@
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						// JSON.stringify() - Display all the info of a patient in a string
-						document.getElementById("lbl_DetailPatientInfo").value = JSON.stringify(jsonData[i]);
+						document.getElementById("lbl_DetailPatientInfo").innerHTML = JSON.stringify(jsonData[i]);
 			    		break;
 			    	}
 			    }
