@@ -254,7 +254,8 @@
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						// JSON.stringify() - Display all the info of a patient in a string
-						var detailInfo = "Complete infomation of this patient: <br />" + JSON.stringify(jsonData[i]);
+						// "<br />" for new line! not "\n"!
+						var detailInfo = "Complete infomation of this patient: <br /><br />" + JSON.stringify(jsonData[i]);
 						document.getElementById("lbl_DetailPatientInfo").innerHTML = detailInfo;							
 			    		break;
 			    	}
