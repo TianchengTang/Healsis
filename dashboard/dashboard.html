@@ -199,6 +199,7 @@
 			var jsonData;
 			$.getJSON('../json/patients.json', function(data){
 				jsonData = data;
+				confirm(jsonData[0].dob);
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						document.getElementById("table_Row1_PatientID").innerHTML = jsonData[i].ptnt_rgstrtn_id_tmp;
