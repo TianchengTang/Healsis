@@ -180,12 +180,12 @@
           </div>
 
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div class="row" style="margin:auto; width:30%; margin-top:5px; margin-bottom:10px">
+		  <div class="row" style="margin:auto; width:30%; margin-top:5px; margin-bottom:20px">
 			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickShowMoreDetails()">Show More Details</button>
 		  </div>
 
-		  <div class="row" style="margin-top:5px; margin-bottom:10px">
-			<label id="lbl_DetailPatientInfo" style="background-color:white"></label>
+		  <div class="row" style="margin-top:20px; margin-bottom:20px">
+			<label id="lbl_DetailPatientInfo" style="background-color:white; font-style:normal"></label>
 		  </div>
 		  
         </div>
@@ -254,7 +254,8 @@
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
 						// JSON.stringify() - Display all the info of a patient in a string
-						document.getElementById("lbl_DetailPatientInfo").innerHTML = JSON.stringify(jsonData[i]);
+						document.getElementById("lbl_DetailPatientInfo").innerHTML = 
+							"Complete infomation of this patient: " + "\n" + "\n" + JSON.stringify(jsonData[i]);
 			    		break;
 			    	}
 			    }
