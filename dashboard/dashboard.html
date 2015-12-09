@@ -209,7 +209,7 @@
 						document.getElementById("table_Row1_City").innerHTML = jsonData[i].City;
 						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive;
 						document.getElementById("table_Row1_BldPressure").innerHTML =
-							"High: " + jsonData[i].bp_systlc + "; Low: " +jsonData[i].bp_dstlc;
+							"High: " + jsonData[i].bp_systlc + "; Low: " + jsonData[i].bp_dstlc;
 						document.getElementById("table_Row1_BldSugar").innerHTML = jsonData[i].bld_sgr;
 						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic;
 						document.getElementById("table_Row1_UriCount").innerHTML = jsonData[i].UrinationCount;
@@ -221,6 +221,7 @@
 			    // We didn't find the specific patientID in the list of all the patients
 			    if ((i==jsonData.length) && (jsonData[i-1].ptnt_rgstrtn_id_tmp!=patientID)) {
 			    	alert ("This patient does not exist, please modify your input.");
+			    	confirm(jsonData[i-1].toString());
 			    }
 			});
 		}
