@@ -178,17 +178,23 @@
               </tbody>
             </table>
           </div>
-		  
+
 		  <!-- center aligning has no effect if the width property is not set or set to 100% -->
-		  <div class="row" style="margin:auto; width:30%; margin-top:5px">
+		  <div class="row" style="margin:auto; width:30%; margin-top:5px; margin-bottom:20px">
 			<button type="button" class="btn btn-sm btn-default btn-big" onclick="clickShowMoreDetails()">Show More Details</button>
+		  </div>
+
+		  <div class="row" style="margin-top:20px; margin-bottom:20px">
+			<label id="lbl_DetailPatientInfo" style="background-color:white; font-weight:normal"></label>
 		  </div>
 		  
         </div>
       </div>
     </div>
 
+
 	<!-- Scripts are placed at the end of the document so the pages load faster -->
+	<!-- ================================================================================================================================== -->
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -197,7 +203,7 @@
 		function loadJsonFile(patientID) {
 
 			var jsonData;
-			$.getJSON('../json/newPatients.json', function(data){
+			$.getJSON('../json/patients.json', function(data){
 				jsonData = data;
 			    for (var i = 0; i < jsonData.length; i++) {	
 			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
@@ -208,7 +214,8 @@
 						document.getElementById("table_Row1_Area").innerHTML = jsonData[i].patient_Area;
 						document.getElementById("table_Row1_City").innerHTML = jsonData[i].City;
 						document.getElementById("table_Row1_Hypertension").innerHTML = jsonData[i].Hypertensive;
-						document.getElementById("table_Row1_BldPressure").innerHTML = jsonData[i].bp_systlc + ", " +jsonData[i].bp_dstlc;
+						document.getElementById("table_Row1_BldPressure").innerHTML =
+							"High: " + jsonData[i].bp_systlc + "; Low: " + jsonData[i].bp_dstlc;
 						document.getElementById("table_Row1_BldSugar").innerHTML = jsonData[i].bld_sgr;
 						document.getElementById("table_Row1_Diabetes").innerHTML = jsonData[i].Diabetic;
 						document.getElementById("table_Row1_UriCount").innerHTML = jsonData[i].UrinationCount;
@@ -218,10 +225,9 @@
 			    	}
 			    }
 			    // We didn't find the specific patientID in the list of all the patients
-			    if (i==jsonData.length && jsonData[i].ptnt_rgstrtn_id_tmp != patientID) {
+			    if ((i==jsonData.length) && (jsonData[i-1].ptnt_rgstrtn_id_tmp!=patientID)) {
 			    	alert ("This patient does not exist, please modify your input.");
 			    }
-			    confirm(patientID + ", i = " + i);
 			});
 		}
 	</script>
@@ -240,7 +246,25 @@
 
 	<script>
 		function clickShowMoreDetails() {
-			confirm("Not functional yet");
+			var patientID = document.getElementById("txtFd_PatientID").value;
+			var jsonData;
+			$.getJSON('../json/patients.json', function(data){
+				jsonData = data;
+
+			    for (var i = 0; i < jsonData.length; i++) {	
+			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
+						// JSON.stringify() - Display all the info of a patient in a string
+						// "<br />" for new line! not "\n"!
+						var detailInfo = "Complete infomation of this patient: <br /><br />" + JSON.stringify(jsonData[i]);
+						document.getElementById("lbl_DetailPatientInfo").innerHTML = detailInfo;							
+			    		break;
+			    	}
+			    }
+			    // We didn't find the specific patientID in the list of all the patients
+			    if ((i==jsonData.length) && (jsonData[i-1].ptnt_rgstrtn_id_tmp!=patientID)) {
+			    	alert ("This patient does not exist, please modify your input.");		
+				}
+			});
 		}
 	</script>
 	
