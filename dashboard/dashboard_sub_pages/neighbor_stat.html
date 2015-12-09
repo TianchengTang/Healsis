@@ -86,26 +86,28 @@
 					</div>
 					<div class="panel-body">
 						<div id="morris-donut-chart">
-						<svg height="352" version="1.1" width="557" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; 
-						 position: relative;">
-							<desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Rapha??l 2.1.2</desc>
-							<defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
-							<path fill="none" stroke="#0b62a4" d="M278.5,290.8333333333333A112.33333333333333,112.33333333333333,0,0,0,384.5483986027914,215.54746862555191" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path>
-							<path fill="#0b62a4" stroke="#ffffff" d="M278.5,293.8333333333333A115.33333333333333,115.33333333333333,0,0,0,387.3805516812042,216.53686689745092L432.852342773499,232.4222058184962A163.5,163.5,0,0,1,278.5,342Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-							<path fill="none" stroke="#3980b5" d="M384.5483986027914,215.54746862555191A112.33333333333333,112.33333333333333,0,0,0,177.72832001158343,128.8628537273753" stroke-width="2" opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></path>
-							<path fill="#3980b5" stroke="#ffffff" d="M387.3805516812042,216.53686689745092A115.33333333333333,115.33333333333333,0,0,0,175.03708820180378,127.53723261030224L127.34248001737515,104.04428059106294A168.5,168.5,0,0,1,437.5725979041871,234.07120293832787Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-							<path fill="none" stroke="#679dc6" d="M177.72832001158343,128.8628537273753A112.33333333333333,112.33333333333333,0,0,0,278.4647094431052,290.8333277899056" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#679dc6" stroke="#ffffff" d="M175.03708820180378,127.53723261030224A115.33333333333333,115.33333333333333,0,0,0,278.4637669653246,293.8333276418615L278.44863496095877,341.9999919315985A163.5,163.5,0,0,1,131.82786636700794,106.25364911951806Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-							<text x="278.5" y="168.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px" font-weight="800" transform="matrix(2.022,0,0,2.022,-284.627,-181.405)" stroke-width="0.4945598417408507">
-								<tspan dy="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Good</tspan>
-							</text>
-							<text x="278.5" y="188.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;" font-size="14px" transform="matrix(2.3403,0,0,2.3403,-373.2674,-241.9201)" stroke-width="0.427299703264095">
-								<tspan dy="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">30%</tspan>
-							</text>
-						</svg>
+
+
+
+
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>	
+
+
+      <div class="col-md-8">
+      <div id="MorrisPieChart_General" style="height: 250px;">
+
+
+
+
+      </div>
+      </div>
+
+
+
+
 					
 			<!-- Column 2/2 -->
 		    <div class="col-md-4">
@@ -155,6 +157,29 @@
     <script src="../../js/plugins/flot/jquery.flot.resize.js"></script>
     <script src="../../js/plugins/flot/jquery.flot.pie.js"></script>
     <script src="../../js/plugins/flot/flot-data.js"></script>	
+
+    <!-- Drawing the Charts -->
+    <script>
+      new Morris.Line({
+        // ID of the element in which to draw the chart.
+        element: 'MorrisPieChart_General',
+        // Chart data records -- each entry in this array corresponds to a point on
+        // the chart.
+        data: [
+          { year: '2008', value: 20 },
+          { year: '2009', value: 10 },
+          { year: '2010', value: 5 },
+          { year: '2011', value: 5 },
+          { year: '2012', value: 20 }
+        ],
+        // The name of the data record attribute that contains x-values.
+        xkey: 'year',
+        // A list of names of data record attributes that contain y-values.
+        ykeys: ['value'],
+        // Labels for the ykeys -- will be displayed when you hover over the
+        // chart.
+        labels: ['Value']
+    </script>
 	
   </body>
 </html>
