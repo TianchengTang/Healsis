@@ -22,7 +22,8 @@
 
   </head>
 
-  <body style="background-color: #F6F6F6" onload="generateMorrisDonut_General()">
+  <body style="background-color: #F6F6F6" 
+   onload="generateMorrisDonut_General(); generateMorrisDonut_Hyper(); generateMorrisDonut_Diab()">
 
 	<!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -86,24 +87,24 @@
 					</div>
 					<div class="panel-body">
 						<div id="morris-donut-chart">
-              <div id="MorrisDonutChart_General" style="height: 300px"></div>
+							<div id="MorrisDonutChart_General" style="height: 300px"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 					
 			<!-- Column 2/2 -->
-	    <div class="col-md-4">
-		  <div class="row">
-			<label class="item-name col-md-5">Location</label>
-			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_General()">
-				<option>Location</option>
-				<option>FatehNagar</option>
-				<option>RamakrishnaNagar</option>
-				<option>Indiragandhipuram</option>
-				<option>JanathaNagar</option>					
-			</select>
-      </div>
+			<div class="col-md-4">
+			  <div class="row">
+				<label class="item-name col-md-5">Location</label>
+				<select id="txtSel_Location_General" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_General()">
+					<option>Location</option>
+					<option>FatehNagar</option>
+					<option>RamakrishnaNagar</option>
+					<option>Indiragandhipuram</option>
+					<option>JanathaNagar</option>					
+				</select>
+			  </div>
 			</div>
 			
 		  </div>
@@ -111,10 +112,72 @@
 		  <!-- Section Title --> 
           <h2 class="sub-header">Hypertension Condition (Suffered / High Risk / Low Risk) by Locations</h2>
 
+		  <div class="row">
+
+			<!-- Column 1/2 -->		  
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Number of People in Different Conditions</h3>
+					</div>
+					<div class="panel-body">
+						<div id="morris-donut-chart">
+							<div id="MorrisDonutChart_Hyper" style="height: 300px"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<!-- Column 2/2 -->
+			<div class="col-md-4">
+			  <div class="row">
+				<label class="item-name col-md-5">Location</label>
+				<select id="txtSel_Location_Hyper" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_Hyper()">
+					<option>Location</option>
+					<option>FatehNagar</option>
+					<option>RamakrishnaNagar</option>
+					<option>Indiragandhipuram</option>
+					<option>JanathaNagar</option>					
+				</select>
+			  </div>
+			</div>
+			
+		  </div>		  
 
 		  <!-- Section Title --> 
           <h2 class="sub-header">Diabetes Condition (Suffered / High Risk / Low Risk) by Locations</h2>
-		  
+
+		  <div class="row">
+
+			<!-- Column 1/2 -->		  
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Number of People in Different Conditions</h3>
+					</div>
+					<div class="panel-body">
+						<div id="morris-donut-chart">
+							<div id="MorrisDonutChart_Diab" style="height: 300px"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<!-- Column 2/2 -->
+			<div class="col-md-4">
+			  <div class="row">
+				<label class="item-name col-md-5">Location</label>
+				<select id="txtSel_Location_Diab" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_Diab()">
+					<option>Location</option>
+					<option>FatehNagar</option>
+					<option>RamakrishnaNagar</option>
+					<option>Indiragandhipuram</option>
+					<option>JanathaNagar</option>					
+				</select>
+			  </div>
+			</div>
+			
+		  </div>		  
 		  
         </div>
       </div>
@@ -146,14 +209,14 @@
     <script>
       function updateMorrisDonut_General() {
         var jsonData;
-        var patient_Location = document.getElementById("txtSel_Location").value;
-        $.getJSON('../../json/neighbor_stat.json', function(data){        
+        var patient_Location = document.getElementById("txtSel_Location_General").value;
+        $.getJSON('../../json/neighbor_stat_general.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              value1 = jsonData[i].good;
-              value2 = jsonData[i].normal;
-              value3 = jsonData[i].bad;
+              good_General = jsonData[i].good;
+              normal_General = jsonData[i].normal;
+              bad_General = jsonData[i].bad;
               break;
             }
           }
@@ -168,25 +231,107 @@
       }
     </script>
 
+    <script>
+      function updateMorrisDonut_Hyper() {
+        var jsonData;
+        var patient_Location = document.getElementById("txtSel_Location_Hyper").value;
+        $.getJSON('../../json/neighbor_stat_hyper.json', function(data){        
+          jsonData = data;
+          for (var i = 0; i < jsonData.length; i++) {
+            if (jsonData[i].patient_Location == patient_Location) {
+              good_General = jsonData[i].good;
+              normal_General = jsonData[i].normal;
+              bad_General = jsonData[i].bad;
+              break;
+            }
+          }
+          // We didn't find the specific patientID in the list of all the patients
+          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
+            alert ("This Location does not exist, please modify your input.");
+          }
+          //Erase all the contents in the div of the chart
+          document.getElementById("MorrisDonutChart_Hyper").innerHTML = "";
+          generateMorrisDonut_Hyper();
+        })
+      }
+    </script>	
 
+    <script>
+      function updateMorrisDonut_Diab() {
+        var jsonData;
+        var patient_Location = document.getElementById("txtSel_Location_Diab").value;
+        $.getJSON('../../json/neighbor_stat_diab.json', function(data){        
+          jsonData = data;
+          for (var i = 0; i < jsonData.length; i++) {
+            if (jsonData[i].patient_Location == patient_Location) {
+              good_General = jsonData[i].good;
+              normal_General = jsonData[i].normal;
+              bad_General = jsonData[i].bad;
+              break;
+            }
+          }
+          // We didn't find the specific patientID in the list of all the patients
+          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
+            alert ("This Location does not exist, please modify your input.");
+          }
+          //Erase all the contents in the div of the chart
+          document.getElementById("MorrisDonutChart_Diab").innerHTML = "";
+          generateMorrisDonut_Diab();
+        })
+      }
+    </script>	
+	
     <!-- Drawing the Charts -->
     <script>
-      var value1=0;
-      var value2=0;
-      var value3=0;
-      var Donut1;
+      var good_General=0;
+      var normal_General=0;
+      var bad_General=0;
+	  var Donut_General;
+			
+      var good_Hyper=0;
+      var normal_Hyper=0;
+      var bad_Hyper=0;
+	  var Donut_Hyper;
+	  
+      var good_Diab=0;
+      var normal_Diab=0;
+      var bad_Diab=0;	  
+	  var Donut_Diab;
     </script>
     <script>
       function generateMorrisDonut_General(){
-        Donut1 = new Morris.Donut({
+        Donut_General = new Morris.Donut({
           element: 'MorrisDonutChart_General',
           data: [
-            {label: "Good Condition", value: value1},
-            {label: "Normal Condition", value: value2},
-            {label: "Bad Condition", value: value3}
+            {label: "Good Condition", value: good_General},
+            {label: "Normal Condition", value: normal_General},
+            {label: "Bad Condition", value: bad_General}
           ]
         });
-
+      }
+    </script>
+    <script>
+      function generateMorrisDonut_Hyper(){
+        Donut_Hyper = new Morris.Donut({
+          element: 'MorrisDonutChart_Hyper',
+          data: [
+            {label: "Good Condition", value: good_Hyper},
+            {label: "Normal Condition", value: normal_Hyper},
+            {label: "Bad Condition", value: bad_Hyper}
+          ]
+        });
+      }
+    </script>
+    <script>
+      function generateMorrisDonut_Diab(){
+        Donut_Diab = new Morris.Donut({
+          element: 'MorrisDonutChart_Diab',
+          data: [
+            {label: "Good Condition", value: good_Diab},
+            {label: "Normal Condition", value: normal_Diab},
+            {label: "Bad Condition", value: bad_Diab}
+          ]
+        });
       }
     </script>
 	
