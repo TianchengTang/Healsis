@@ -96,7 +96,7 @@
 	    <div class="col-md-4">
 		  <div class="row">
 			<label class="item-name col-md-5">Location</label>
-			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px">
+			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="loadJsonFile()">
 				<option>Location</option>
 				<option>FatehNagar</option>
 				<option>RamakrishnaNagar</option>
@@ -142,22 +142,53 @@
     <script src="../../js/plugins/flot/jquery.flot.pie.js"></script>
     <script src="../../js/plugins/flot/flot-data.js"></script>	
 
+
     <script>
-      var value1 = 114;
-      var value2 = 530;
-      var value3 = 75
+      function loadJsonFile() {
+        var jsonData;
+        var value1;
+        var value2;
+        var value3;
+        var patient_Location = document.getElementById("txtSel_Location").value;
+        confirm(patient_Location);
+        $.getJSON('../../json/neighbor_stat.json', function(data){        
+          confirm("0!");
+          jsonData = data;
+          confirm("1!");
+          for (var i = 0; i < jsonData.length; i++) { 
+            confirm(i);
+            if (jsonData[i].patient_Location == patient_Location) {
+              value1 = jsonData[i].good;
+              confirm(value1);
+              value2 = jsonData[i].normal;
+              value3 = jsonData[i].bad;
+              break;
+            }
+          }
+          // We didn't find the specific patientID in the list of all the patients
+          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patientID)) {
+            alert ("This patient does not exist, please modify your input.");
+          }
+        });
+
+        delete Morris.Donut;
+        generateMorrisDonut(value1,value2,value3);
+      }
     </script>
+
 
     <!-- Drawing the Charts -->
     <script>
-      new Morris.Donut({
-        element: 'MorrisDonutChart_General',
-        data: [
-          {label: "Good Condition", value: value1},
-          {label: "Normal Condition", value: value2},
-          {label: "Bad Condition", value: value3}
-        ]
-      });
+      function generateMorrisDonut(value1,value2,value3){
+        new Morris.Donut({
+          element: 'MorrisDonutChart_General',
+          data: [
+            {label: "Good Condition", value: value1},
+            {label: "Normal Condition", value: value2},
+            {label: "Bad Condition", value: value3}
+          ]
+        });
+      }
     </script>
 	
   </body>
