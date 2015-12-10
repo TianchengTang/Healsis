@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
-	<script type="text/javascript">
-	function CheckForm(objForm)
-	{
 
-	if (objForm.text.value !='30-2901')
-	{
-	window.alert('Please check username!');
-	objForm.username.focus();
-	return false;
-	}
-	if (objForm.password.value !='123456') {
-		window.alert('Please check password!');
-		objForm.passw.focus();
-		return false;
-	}
-		return true;
-	}
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		function CheckForm() {
+			var user_name = document.getElementById("txt_userName").value;
+			var user_password = document.getElementById("txt_password").value;
+			var loginSuccess = false;
+			var jsonData;
+			$.getJSON('../../json/login_dshu.json', function(data){
+				jsonData = data;
+			    for (var i = 0; i < jsonData.length; i++) {	
+			    	if (jsonData[i].user_name == user_name && jsonData[i].password == user_password) {
+						
+						confirm("gooogooogoood!!!");
+						loginSuccess = true;
+
+
+			    		break;
+			    	}
+			    }
+			    // We didn't find the specific patientID in the list of all the patients
+			    if ((i==jsonData.length) && loginSuccess==false) {
+			    	alert ("User name or password error! Please retry.");
+			    }
+			});			
+
+
+		}
 	</Script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/signin.css" rel="stylesheet">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
 
 </head>
 
@@ -33,8 +48,8 @@
 <div class="signin">
 	<div class="signin-head"><img src="images/test/head_120.png" height="125" width="125" alt="" class="img-circle"></div>
 	<form class="form-signin" role="form">
-		<input type="text" class="form-control" placeholder="Username" required autofocus />
-		<input type="password" class="form-control" placeholder="Passcode" required />
+		<input type="text" id="txt_userName" class="form-control" placeholder="Username" required autofocus />
+		<input type="password" id="txt_password" class="form-control" placeholder="Passcode" required />
 		<button class="btn btn-lg btn-warning btn-block" type="submit" onclick="CheckForm()">Go!</button>
 		<label class="checkbox">
 			<input type="checkbox" value="remember-me"> remember me

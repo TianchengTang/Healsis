@@ -1,14 +1,14 @@
 [
   {
-    "name":"troy",
+    "user_name":"troy",
     "password":"haha"
   },
   {
-    "name":"jinhao",
+    "user_name":"jinhao",
     "password":"2b"
   },
   {
-    "name":"dashu",
+    "user_name":"dashu",
     "password":"nb"
   } 
 ]
