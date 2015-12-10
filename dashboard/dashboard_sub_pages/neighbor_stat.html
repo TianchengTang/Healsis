@@ -96,7 +96,7 @@
 	    <div class="col-md-4">
 		  <div class="row">
 			<label class="item-name col-md-5">Location</label>
-			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="loadJsonFile()">
+			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_General()">
 				<option>Location</option>
 				<option>FatehNagar</option>
 				<option>RamakrishnaNagar</option>
@@ -144,7 +144,7 @@
 
 
     <script>
-      function loadJsonFile() {
+      function updateMorrisDonut_General() {
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location").value;
         $.getJSON('../../json/neighbor_stat.json', function(data){        
@@ -164,7 +164,6 @@
           //Erase all the contents in the div of the chart
           document.getElementById("MorrisDonutChart_General").innerHTML = "";
           generateMorrisDonut_General();
-
         })
       }
     </script>
