@@ -176,8 +176,9 @@
 
     <!-- Drawing the Charts -->
     <script>
+      var Donut1;
       function generateMorrisDonut(value1,value2,value3){
-        var Donut1 = new Morris.Donut({
+        Donut1 = new Morris.Donut({
           element: 'MorrisDonutChart_General',
           data: [
             {label: "Good Condition", value: value1},
