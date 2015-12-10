@@ -111,7 +111,7 @@
 		  </div>
 		  
 		  <!-- Section Title --> 
-          <h2 class="sub-header">Hypertension Condition (Low Risk / High Risk / Suffered) by Locations</h2>
+          <h2 class="sub-header">Hypertension Condition (Yes / No) by Locations</h2>
 
 		  <div class="row">
 
@@ -147,7 +147,7 @@
 		  </div>		  
 
 		  <!-- Section Title --> 
-          <h2 class="sub-header">Diabetes Condition (Low Risk / High Risk / Suffered) by Locations</h2>
+          <h2 class="sub-header">Diabetes Condition (Yes / No) by Locations</h2>
 
 		  <div class="row">
 
@@ -242,8 +242,8 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              good_Hyper = jsonData[i].good;
-              normal_Hyper = jsonData[i].normal;
+              yes_Hyper = jsonData[i].good;
+              no_Hyper = jsonData[i].normal;
               bad_Hyper = jsonData[i].bad;
               break;
             }
@@ -291,9 +291,8 @@
       var bad_General=0;
 	  var Donut_General;
 			
-      var good_Hyper=0;
-      var normal_Hyper=0;
-      var bad_Hyper=0;
+      var yes_Hyper=0;
+      var no_Hyper=0;
 	  var Donut_Hyper;
 	  
       var good_Diab=0;
@@ -319,9 +318,8 @@
         Donut_Hyper = new Morris.Donut({
           element: 'MorrisDonutChart_Hyper',
           data: [
-            {label: "Low Risk", value: good_Hyper},
-            {label: "High Risk", value: normal_Hyper},
-            {label: "Suffered", value: bad_Hyper}
+            {label: "Yes", value: yes_Hyper},
+            {label: "No", value: no_Hyper}
           ]
         });
       }
