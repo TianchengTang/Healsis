@@ -4,60 +4,80 @@
   "gender" : "male",
   "score_data" : [
   {
-      "Weight"       : 14,
-      "value"     : 204
+      "Weight"       : 1,
+      "value"     : 250
    },
    {
-      "LDL"       : 1,
-      "value"     : 251
+      "Height"       : 2,
+      "value"     : 185
    },
    {
-      "HDL"       : 2,
-      "value"     : 35
+      "BMI"       : 3,
+      "value"     : 29.2
    },
    {
-      "Triglycerides" : 3,
-      "value"         : 140
+      "Waist"       : 4,
+      "value"     : 30
    },
    {
-      "Sleep"     : 4,
-      "value"     : 5
+      "Personal Hypertensive"       : 5,
+      "value"     : 1
    },
    {
-      "Exercise"  : 5,
-      "value"     : 3
+      "Heart Attack"       : 6,
+      "value"     : 0
    },
    {
-      "Happiness" : 6,
-      "value"     : 9
+      "Personal Diabetic" : 7,
+      "value"         : 1
    },
    {
-      "Glucose"   : 7,
-      "value"     : 101
+      "Hypertensive in Family"       : 8,
+      "value"     : 1
    },
    {
-      "Blood Pressure Systolic" : 8,
+      "Diabetic in Family"       : 9,
+      "value"     : 1
+   },
+   {
+      "Blood Sugar" : 10,
       "value"     : 117
    },
    {
-      "Blood Pressure Diastolic" : 9,
+      "PLS"      : 11,
+      "value"     : 80
+   },
+   {
+      "Blood Pressure Systolic" : 12,
+      "value"     : 117
+   },
+   {
+      "Blood Pressure Diastolic" : 13,
       "value"     : 79
    },
    {
-      "Alcohol"   : 10,
-      "value"     : 0
-   },
-   {
-      "Smoking"   : 11,
-      "value"     : 0
-   },
-   {
-      "Waist Circumference" : 12,
-      "value"     : 34
-   },
-   {
-      "Pain"      : 13,
+      "Smoking"   : 14,
       "value"     : 1
+   },
+   {
+      "Dizziness"      : 15,
+      "value"     : 0
+   },
+   {
+      "Numbness"      : 16,
+      "value"     : 0
+   },
+   {
+      "Dry Tongue"      : 17,
+      "value"     : 0
+   },
+   {
+      "Urination Times"      : 18,
+      "value"     : 1
+   },
+   {
+      "On Medicine"      : 19,
+      "value"     : 0
    }
   ]
 }

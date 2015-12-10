@@ -1057,6 +1057,23 @@ HGraph.prototype.updateWeb = function(animated, forceZoomedState, revertToOrigin
 
 
 HGraph.prototype.calculateHealthScore = function(){
+
+	/*alert("going to start ajax");
+	var xxx = 11
+
+	$.ajax({
+   		url:"/nanohealth/test.py",
+   		type: 'GET',
+   		dataType: 'text',
+   		//data: data,
+   		success: function(msg){
+   			  alert("success");
+              alert(msg);
+            },
+        error: function(error){
+        	alert(error);
+        }
+	})*/
 	//V0.3 of hScore Algorithm.
 	if(this.userdata && this.userdata.factors){
 		var numPoints = 0;
@@ -1075,7 +1092,8 @@ HGraph.prototype.calculateHealthScore = function(){
 		console.log('sumSquares='+sumSquares);
 		console.log('score='+parseInt(100-(100/(Math.pow(100,2)*numPoints))*sumSquares));
 		*/
-		return parseInt(100-(100/(Math.pow(idealValue,2)*numPoints))*sumSquares);
+		return parseInt(100-(100/(Math.pow(idealValue,2)*numPoints))*sumSquares)-10;
 	}
-	return 50;
+
+	return 100;
 };

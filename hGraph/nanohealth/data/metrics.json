@@ -4,65 +4,47 @@
     "metrics": [
 
     {
-        "name" : "Basic Body Information",
+        "name" : "Diabetic",
         "details" : [
           {
-            "name": "LDL",
+            "name": "Personal Diabetic",
             "features": {
               "healthyrange": [
-                50,
-                130
+                0,
+                1
               ],
               "totalrange": [
                 0,
-                300
-              ],
-              "boundayflags": [
-                false,
-                true
-              ],
-              "weight": 9,
-              "unitlabel": "mg/dl"
-            }
-          },
-          {
-            "name": "HDL",
-            "features": {
-              "healthyrange": [
-                40,
-                60
-              ],
-              "totalrange": [
-                0,
-                150
-              ],
-              "boundayflags": [
-                false,
-                true
-              ],
-              "weight": 9,
-              "unitlabel": "mg/dl"
-            }
-          },
-          {
-            "name": "Triglycerides",
-            "features": {
-              "healthyrange": [
-                70,
-                150
-              ],
-              "totalrange": [
-                0,
-                300
+                10
               ],
               "boundayflags": [
                 false,
                 true
               ],
               "weight": 3,
-              "unitlabel": "mg/dl"
+              "unitlabel": "yes/no"
             }
-        }]
+
+        },
+          {
+            "name": "Diabetic in Family",
+            "features": {
+              "healthyrange": [
+                0,
+                1
+              ],
+              "totalrange": [
+                0,
+                10
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 9,
+              "unitlabel": "yes/no"
+            }
+          }]
       },
 
       {
@@ -108,22 +90,41 @@
           }]
         },
               {
-        "name": "Alcohol",
+        "name": "Blood Sugar",
         "features": {
           "healthyrange": [
-            0,
-            1
+            70,
+            120
           ],
           "totalrange": [
-            0,
-            20
+            30,
+            600
           ],
           "boundayflags": [
             false,
             true
           ],
           "weight": 5,
-          "unitlabel": "drinks/week"
+          "unitlabel": "mg/dl"
+        }
+      },
+              {
+        "name": "PLS",
+        "features": {
+          "healthyrange": [
+            70,
+            100
+          ],
+          "totalrange": [
+            30,
+            200
+          ],
+          "boundayflags": [
+            false,
+            true
+          ],
+          "weight": 5,
+          "unitlabel": "times"
         }
       },
             {
@@ -142,15 +143,15 @@
             true
           ],
           "weight": 5,
-          "unitlabel": "cigarettes/day"
+          "unitlabel": "yes/no"
         }
       },
             {
-        "name": "Pain",
+        "name": "Dizziness",
         "features": {
           "healthyrange": [
             0,
-            4
+            1
           ],
           "totalrange": [
             0,
@@ -161,28 +162,86 @@
             true
           ],
           "weight": 3,
-          "unitlabel": "pain scale"
+          "unitlabel": "yes/no"
         }
       },
             {
-        "name": "Waist Circumference",
+        "name": "Numbness",
         "features": {
           "healthyrange": [
-            30,
-            34.5
+            0,
+            1
           ],
           "totalrange": [
             0,
-            200
+            10
           ],
           "boundayflags": [
             false,
             true
           ],
-          "weight": 10,
-          "unitlabel": "inches"
+          "weight": 3,
+          "unitlabel": "yes/no"
         }
       },
+            {
+        "name": "Dry Tongue",
+        "features": {
+          "healthyrange": [
+            0,
+            1
+          ],
+          "totalrange": [
+            0,
+            10
+          ],
+          "boundayflags": [
+            false,
+            true
+          ],
+          "weight": 3,
+          "unitlabel": "yes/no"
+        }
+      },
+            {
+        "name": "Urination Times",
+        "features": {
+          "healthyrange": [
+            0,
+            2
+          ],
+          "totalrange": [
+            0,
+            10
+          ],
+          "boundayflags": [
+            false,
+            true
+          ],
+          "weight": 3,
+          "unitlabel": "times"
+        }
+      },
+            {
+        "name": "On Medicine",
+        "features": {
+          "healthyrange": [
+            0,
+            1
+          ],
+          "totalrange": [
+            0,
+            10
+          ],
+          "boundayflags": [
+            false,
+            true
+          ],
+          "weight": 3,
+          "unitlabel": "yes/no"
+        }
+      },
+
             {
             "name": "Weight",
             "features": {
@@ -202,81 +261,123 @@
               "unitlabel": "lbs"
             }
           },
+            {
+            "name": "Height",
+            "features": {
+              "healthyrange": [
+                150,
+                205
+              ],
+              "totalrange": [
+                50,
+                400
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 9,
+              "unitlabel": "cm"
+            }
+          },
+          {
+            "name": "Waist",
+            "features": {
+              "healthyrange": [
+                25,
+                44
+              ],
+              "totalrange": [
+                10,
+                60
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 9,
+              "unitlabel": "inch"
+            }
+          },
+            {
+            "name": "BMI",
+            "features": {
+              "healthyrange": [
+                18.5,
+                24
+              ],
+              "totalrange": [
+                10,
+                40
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 9,
+              "unitlabel": "Kg/(M^2)"
+            }
+          },
+    {
+        "name" : "Hypertensive",
+        "details" : [
+          {
+            "name": "Personal Hypertensive",
+            "features": {
+              "healthyrange": [
+                0,
+                1
+              ],
+              "totalrange": [
+                0,
+                10
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 3,
+              "unitlabel": "yes/no"
+            }
 
-                {
-        "name": "Exercise",
-        "features": {
-          "healthyrange": [
-            3,
-            12
-          ],
-          "totalrange": [
-            0,
-            60
-          ],
-          "boundayflags": [
-            false,
-            true
-          ],
-          "weight": 5,
-          "unitlabel": "hours/week"
-        }
+        },
+          {
+            "name": "Hypertensive in Family",
+            "features": {
+              "healthyrange": [
+                0,
+                1
+              ],
+              "totalrange": [
+                0,
+                10
+              ],
+              "boundayflags": [
+                false,
+                true
+              ],
+              "weight": 9,
+              "unitlabel": "yes/no"
+            }
+          }]
       },
       {
-        "name": "Sleep",
+        "name": "Heart Attack",
         "features": {
           "healthyrange": [
-            7.1,
-            8
-          ],
-          "totalrange": [
             0,
-            18
-          ],
-          "boundayflags": [
-            false,
-            true
-          ],
-          "weight": 5,
-          "unitlabel": "hours/night"
-        }
-      },
-      {
-        "name": "Happiness",
-        "features": {
-          "healthyrange": [
-            6,
-            10
+            1
           ],
           "totalrange": [
             0,
             10
-          ],
-          "boundayflags": [
-            false,
-            true
-          ],
-          "weight": 3,
-          "unitlabel": "happiness scale"
-        }
-      },
-      {
-        "name": "Glucose",
-        "features": {
-          "healthyrange": [
-            61,
-            100
-          ],
-          "totalrange": [
-            0,
-            160
           ],
           "boundayflags": [
             false,
             true
           ],
           "weight": 10,
-          "unitlabel": "mg/dl"
+          "unitlabel": "yes/no"
         }
       }
     ]
