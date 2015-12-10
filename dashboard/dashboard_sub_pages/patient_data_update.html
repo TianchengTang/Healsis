@@ -105,20 +105,6 @@
 					<option>Yes</option>
 					<option>No</option>
 				</select>
-              </div>
-			  <div class="row">
-				<label class="item-name col-md-5">Hypertension Risk</label>
-				<select id="txtSel_HyperRisk" class="form-control select-list col-md-7">
-					<option>Low</option>
-					<option>High</option>
-				</select>
-              </div>
-			  <div class="row">
-				<label class="item-name col-md-5">Diabetes Risk</label>
-				<select id="txtSel_DiabRisk" class="form-control select-list col-md-7">
-					<option>Low</option>
-					<option>High</option>
-				</select>
               </div>			  
 			  <div class="row">
 				<label class="item-name col-md-5">Blood Pressure</label>
@@ -202,29 +188,56 @@
 
 	<!-- Scripts are placed at the end of the document so the pages load faster -->
     <!-- Bootstrap core JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../js/jquery.js"></script>
+
 
     <script>
 		function clickFind() {
 			var patientID = document.getElementById("txtFd_PatientID").value;
-			var area = document.getElementById("txtSel_Area").value;
-			var location = document.getElementById("txtSel_Location").value;
-			
-			document.getElementById("txtSel_Hypertension").value = "No";
-			document.getElementById("txtSel_HyperRisk").value = "High";
-			document.getElementById("txtSel_DiabRisk").value = "High";
-			document.getElementById("txtFd_BloodPressure").value = "110/82";
-			document.getElementById("txtFd_BloodSugar").value = 130;
-			document.getElementById("txtFd_UriCount").value = 3;
-			document.getElementById("txtFd_DryTongue").value = "No";
-			document.getElementById("txtSel_Gender").value = "Female";
-			document.getElementById("txtFd_Height").value = 5;
-			document.getElementById("txtFd_Weight").value = 51.3;
-			document.getElementById("txtSel_Area").value = "Kulkatpally";
-			document.getElementById("txtSel_Location").value = "FatehNagar";			
+
+			showPatientData(patientID);		
 		}
 	</script>
+
+	<script>
+		function showPatientData(patientID) {
+
+			var jsonData;
+			$.getJSON('../../json/patients.json', function(data){
+				jsonData = data;
+			    for (var i = 0; i < jsonData.length; i++) {	
+			    	if (jsonData[i].ptnt_rgstrtn_id_tmp == patientID) {
+						document.getElementById("txtSel_Hypertension").value = jsonData[i].Hypertensive;
+						document.getElementById("txtSel_Diabetes").value = jsonData[i].Diabetic;
+						document.getElementById("txtFd_BloodPressure").value = 
+							"High: " + jsonData[i].bp_systlc + "; Low: " + jsonData[i].bp_dstlc;;
+						document.getElementById("txtFd_BloodSugar").value = jsonData[i].bld_sgr;
+						document.getElementById("txtFd_UriCount").value = jsonData[i].UrinationCount;
+						document.getElementById("txtFd_DryTongue").value = jsonData[i].Dry_Tongue;
+						document.getElementById("txtSel_Gender").value = jsonData[i].gndr;
+						document.getElementById("txtFd_Height").value = jsonData[i].hght_ft;
+						document.getElementById("txtFd_Weight").value = jsonData[i].wght;
+						document.getElementById("txtSel_Area").value = jsonData[i].patient_Location;
+						document.getElementById("txtSel_Location").value = jsonData[i].patient_Area;
+
+			    		break;
+			    	}
+			    }
+			    // We didn't find the specific patientID in the list of all the patients
+			    if ((i==jsonData.length) && (jsonData[i-1].ptnt_rgstrtn_id_tmp!=patientID)) {
+			    	alert ("This patient does not exist, please modify your input.");
+			    }
+			});
+
+
+
+
+			
+		}
+	</script>	
 	
   </body>
 </html>
