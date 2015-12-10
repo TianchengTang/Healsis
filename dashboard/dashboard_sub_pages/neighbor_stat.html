@@ -22,7 +22,7 @@
 
   </head>
 
-  <body style="background-color: #F6F6F6">
+  <body style="background-color: #F6F6F6" onload="generateMorrisDonut(0,0,0)">
 
 	<!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -150,17 +150,13 @@
         var value2;
         var value3;
         var patient_Location = document.getElementById("txtSel_Location").value;
-        confirm(patient_Location);
         $.getJSON('../../json/neighbor_stat.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
               value1 = jsonData[i].good;
-              confirm("good: "+value1);
               value2 = jsonData[i].normal;
-              confirm("normal: "+value2);
               value3 = jsonData[i].bad;
-              confirm("bad: "+value3);
               break;
             }
           }
@@ -168,9 +164,9 @@
           if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
             alert ("This Location does not exist, please modify your input.");
           }
-          delete Morris.Donut;
+          //delete Morris.Donut;
           generateMorrisDonut(value1,value2,value3);
-          confirm(patient_Location+"   "+value3);
+
         });
 
 
@@ -189,6 +185,7 @@
             {label: "Bad Condition", value: value3}
           ]
         });
+
       }
     </script>
 	
