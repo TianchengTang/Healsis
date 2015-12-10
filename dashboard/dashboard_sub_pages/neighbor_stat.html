@@ -267,8 +267,8 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              good_Diab = jsonData[i].good;
-              normal_Diab = jsonData[i].normal;
+              yes_Diab = jsonData[i].good;
+              no_Diab = jsonData[i].normal;
               bad_Diab = jsonData[i].bad;
               break;
             }
@@ -295,10 +295,9 @@
       var no_Hyper=0;
 	  var Donut_Hyper;
 	  
-      var good_Diab=0;
-      var normal_Diab=0;
-      var bad_Diab=0;	  
-	  var Donut_Diab;
+      var yes_Diab=0;
+      var no_Diab=0;
+      var Donut_Diab=0;
     </script>
 	
     <script>
@@ -329,9 +328,8 @@
         Donut_Diab = new Morris.Donut({
           element: 'MorrisDonutChart_Diab',
           data: [
-            {label: "Low Risk", value: good_Diab},
-            {label: "High Risk", value: normal_Diab},
-            {label: "Suffered", value: bad_Diab}
+            {label: "Yes", value: yes_Diab},
+            {label: "No", value: no_Diab}
           ]
         });
       }

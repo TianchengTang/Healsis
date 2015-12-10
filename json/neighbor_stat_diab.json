@@ -1,26 +1,22 @@
 [
   {
     "patient_Location":"FatehNagar",
-    "good":41,
-    "normal":101,
-    "bad":23
+    "yes":41,
+    "no":101
   },
   {
     "patient_Location":"RamakrishnaNagar",
-    "good":345,
-    "normal":297,
-    "bad":65
+    "yes":345,
+    "no":297
   },
   {
     "patient_Location":"Indiragandhipuram",
-    "good":4,
-    "normal":11,
-    "bad":3
+    "yes":4,
+    "no":11
   },
   {
     "patient_Location":"JanathaNagar",
-    "good":37,
-    "normal":271,
-    "bad":22
+    "yes":37,
+    "no":271
   }  
 ]
