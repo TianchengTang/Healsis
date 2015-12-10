@@ -5,7 +5,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
+	<script type="text/javascript">
+	function CheckForm(objForm)
+	{
 
+	if (objForm.text.value !='30-2901')
+	{
+	window.alert('Please check username!');
+	objForm.username.focus();
+	return false;
+	}
+	if (objForm.password.value !='123456') {
+		window.alert('Please check password!');
+		objForm.passw.focus();
+		return false;
+	}
+		return true;
+	}
+	</Script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/signin.css" rel="stylesheet">
 
@@ -18,7 +35,7 @@
 	<form class="form-signin" role="form">
 		<input type="text" class="form-control" placeholder="Username" required autofocus />
 		<input type="password" class="form-control" placeholder="Passcode" required />
-		<button class="btn btn-lg btn-warning btn-block" type="submit">Go!</button>
+		<button class="btn btn-lg btn-warning btn-block" type="submit" onclick="CheckForm()">Go!</button>
 		<label class="checkbox">
 			<input type="checkbox" value="remember-me"> remember me
 		</label>
