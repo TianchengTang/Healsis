@@ -22,7 +22,7 @@
 
   </head>
 
-  <body style="background-color: #F6F6F6" onload="generateMorrisDonut()">
+  <body style="background-color: #F6F6F6" onload="generateMorrisDonut_General()">
 
 	<!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -96,7 +96,7 @@
 	    <div class="col-md-4">
 		  <div class="row">
 			<label class="item-name col-md-5">Location</label>
-			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="loadJsonFile()">
+			<select id="txtSel_Location" class="form-control select-list col-md-7" style="margin-right:30px" onchange="updateMorrisDonut_General()">
 				<option>Location</option>
 				<option>FatehNagar</option>
 				<option>RamakrishnaNagar</option>
@@ -144,7 +144,7 @@
 
 
     <script>
-      function loadJsonFile() {
+      function updateMorrisDonut_General() {
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location").value;
         $.getJSON('../../json/neighbor_stat.json', function(data){        
@@ -161,12 +161,9 @@
           if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
             alert ("This Location does not exist, please modify your input.");
           }
-          confirm(value1);
-          confirm(Donut1.element);
-
-          delete Donut1;
-          generateMorrisDonut();
-
+          //Erase all the contents in the div of the chart
+          document.getElementById("MorrisDonutChart_General").innerHTML = "";
+          generateMorrisDonut_General();
         })
       }
     </script>
@@ -180,7 +177,7 @@
       var Donut1;
     </script>
     <script>
-      function generateMorrisDonut(){
+      function generateMorrisDonut_General(){
         Donut1 = new Morris.Donut({
           element: 'MorrisDonutChart_General',
           data: [

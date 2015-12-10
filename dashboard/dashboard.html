@@ -256,7 +256,8 @@
 						// JSON.stringify() - Display all the info of a patient in a string
 						// "<br />" for new line! not "\n"!
 						var detailInfo = "Complete infomation of this patient: <br /><br />" + JSON.stringify(jsonData[i]);
-						document.getElementById("lbl_DetailPatientInfo").innerHTML = detailInfo;							
+						// Global substring replacement: .replace(/xxx/g , "yyy");
+						document.getElementById("lbl_DetailPatientInfo").innerHTML = detailInfo.replace(/,/g , ",<br />");							
 			    		break;
 			    	}
 			    }
