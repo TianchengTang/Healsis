@@ -156,9 +156,11 @@
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
               value1 = jsonData[i].good;
-              confirm(value1);
+              confirm("good: "+value1);
               value2 = jsonData[i].normal;
+              confirm("normal: "+value2);
               value3 = jsonData[i].bad;
+              confirm("bad: "+value3);
               break;
             }
           }
