@@ -152,11 +152,8 @@
         var patient_Location = document.getElementById("txtSel_Location").value;
         confirm(patient_Location);
         $.getJSON('../../json/neighbor_stat.json', function(data){        
-          confirm("0!");
           jsonData = data;
-          confirm("1!");
-          for (var i = 0; i < jsonData.length; i++) { 
-            confirm(i);
+          for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
               value1 = jsonData[i].good;
               confirm(value1);
@@ -171,7 +168,7 @@
           }
         });
 
-        delete Morris.Donut;
+        //delete Morris.Donut;
         generateMorrisDonut(value1,value2,value3);
       }
     </script>
