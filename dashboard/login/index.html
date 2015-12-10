@@ -19,10 +19,10 @@
 			$.getJSON('../../json/login_dshu.json', function(data){
 				jsonData = data;
 			    for (var i = 0; i < jsonData.length; i++) {	
-			    	if (jsonData[i].user_name == user_name && jsonData[i].password == user_password) {
+			    	if (jsonData[i].user_name==user_name && jsonData[i].password == user_password) {
 						
 						confirm("gooogooogoood!!!");
-						<a herf="../dashboard.html"></a>;
+						window.location.href = "../dashboard.html";
 						loginSuccess = true;
 
 			    		break;
