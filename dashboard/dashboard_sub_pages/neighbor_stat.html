@@ -242,8 +242,8 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              yes_Hyper = jsonData[i].good;
-              no_Hyper = jsonData[i].normal;
+              yes_Hyper = jsonData[i].yes;
+              no_Hyper = jsonData[i].no;
               break;
             }
           }
@@ -266,8 +266,8 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              yes_Diab = jsonData[i].good;
-              no_Diab = jsonData[i].normal;
+              yes_Diab = jsonData[i].yes;
+              no_Diab = jsonData[i].no;
               break;
             }
           }
