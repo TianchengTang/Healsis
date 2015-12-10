@@ -165,26 +165,18 @@
             alert ("This Location does not exist, please modify your input.");
           }
 
-          $.extend(true, Morris.Donut, {
-              element: 'MorrisDonutChart_General',
-              data: [
-                {label: "Good Condition", value: value1},
-                {label: "Normal Condition", value: value2},
-                {label: "Bad Condition", value: value3}
-              ]
-            });
-
-
+generateMorrisDonut(value1,value2,value3);
 
 
       }
+    }
     </script>
 
 
     <!-- Drawing the Charts -->
     <script>
       function generateMorrisDonut(value1,value2,value3){
-        new Morris.Donut({
+        var Donut1 = new Morris.Donut({
           element: 'MorrisDonutChart_General',
           data: [
             {label: "Good Condition", value: value1},
