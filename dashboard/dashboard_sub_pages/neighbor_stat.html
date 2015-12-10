@@ -157,7 +157,6 @@
               value1 = jsonData[i].good;
               value2 = jsonData[i].normal;
               value3 = jsonData[i].bad;
-              confirm(value3);
               break;
             }
           }
@@ -166,11 +165,9 @@
             alert ("This Location does not exist, please modify your input.");
           }
 
-generateMorrisDonut(value1,value2,value3);
-
-
+          generateMorrisDonut(value1,value2,value3);
+        })
       }
-    }
     </script>
 
 
