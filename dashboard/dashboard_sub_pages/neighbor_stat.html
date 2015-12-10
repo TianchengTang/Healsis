@@ -22,7 +22,7 @@
 
   </head>
 
-  <body style="background-color: #F6F6F6" onload="generateMorrisDonut(0,0,0)">
+  <body style="background-color: #F6F6F6">
 
 	<!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -146,9 +146,6 @@
     <script>
       function loadJsonFile() {
         var jsonData;
-        var value1;
-        var value2;
-        var value3;
         var patient_Location = document.getElementById("txtSel_Location").value;
         $.getJSON('../../json/neighbor_stat.json', function(data){        
           jsonData = data;
@@ -164,11 +161,6 @@
           if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
             alert ("This Location does not exist, please modify your input.");
           }
-
-          Donut1.data[0].value=11111;
-
-
-
         })
       }
     </script>
@@ -176,7 +168,11 @@
 
     <!-- Drawing the Charts -->
     <script>
-      var Donut1;
+      var value1;
+      var value2;
+      var value3;
+    </script>
+    <script>
       function generateMorrisDonut(value1,value2,value3){
         Donut1 = new Morris.Donut({
           element: 'MorrisDonutChart_General',
