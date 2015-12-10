@@ -161,10 +161,7 @@
           if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
             alert ("This Location does not exist, please modify your input.");
           }
-          confirm(value1);
-          confirm(Donut1.element);
-
-          delete Donut1;
+          document.getElementById("MorrisDonutChart_General").innerHTML = "";
           generateMorrisDonut();
 
         })
