@@ -22,7 +22,7 @@
 
   </head>
 
-  <body style="background-color: #F6F6F6">
+  <body style="background-color: #F6F6F6" onload="generateMorrisDonut()">
 
 	<!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -168,12 +168,12 @@
 
     <!-- Drawing the Charts -->
     <script>
-      var value1;
-      var value2;
-      var value3;
+      var value1=0;
+      var value2=0;
+      var value3=0;
     </script>
     <script>
-      function generateMorrisDonut(value1,value2,value3){
+      function generateMorrisDonut(){
         Donut1 = new Morris.Donut({
           element: 'MorrisDonutChart_General',
           data: [
