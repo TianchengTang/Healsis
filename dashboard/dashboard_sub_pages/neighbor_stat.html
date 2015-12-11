@@ -211,6 +211,9 @@
 
     <script>
       function updateMorrisDonut_General() {
+        good_General = 0;
+        normal_General = 0;
+        bad_General = 0;
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_General").value;
         $.getJSON('../../json/patients_HScore.json', function(data){        
