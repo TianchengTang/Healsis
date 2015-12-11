@@ -218,14 +218,14 @@
         var patient_Location = document.getElementById("txtSel_Location_General").value;
         $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
-          confirm(jsonData[0].Score_Level);
+          confirm(jsonData[0].HLevel);
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              if (jsonData[i].Score_Level == "A") {
+              if (jsonData[i].HLevel == "A") {
                 good_General += 1; }
-              else if (jsonData[i].Score_Level == "B") {
+              else if (jsonData[i].HLevel == "B") {
                 normal_General += 1; }
-              else if (jsonData[i].Score_Level == "C") {
+              else if (jsonData[i].HLevel == "C") {
                 bad_General += 1; }
               else ()
             }
