@@ -221,6 +221,7 @@
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
               if (jsonData[i].Score_Level == "A") {
+                confirm(jsonData[i].Score_Level);
                 good_General += 1; }
               else if (jsonData[i].Score_Level == "B") {
                 normal_General += 1; }
