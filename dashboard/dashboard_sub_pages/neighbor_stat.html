@@ -213,19 +213,17 @@
       function updateMorrisDonut_General() {
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_General").value;
-        $.getJSON('../../json/neighbor_stat_general.json', function(data){        
+        $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              good_General = jsonData[i].good;
-              normal_General = jsonData[i].normal;
-              bad_General = jsonData[i].bad;
-              break;
+              if (jsonData[i].Score_Level == "A")
+                good_General += 1;
+              else if (jsonData[i].Score_Level == "B")
+                normal_General += 1;
+              else
+                bad_General += 1;
             }
-          }
-          // We didn't find the specific patientID in the list of all the patients
-          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
-            alert ("This Location does not exist, please modify your input.");
           }
           //Erase all the contents in the div of the chart
           document.getElementById("MorrisDonutChart_General").innerHTML = "";
