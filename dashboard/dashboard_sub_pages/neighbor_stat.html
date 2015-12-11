@@ -236,16 +236,18 @@
 
     <script>
       function updateMorrisDonut_Hyper() {
+        yes_Hyper = 0;
+        no_Hyper = 0;
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_Hyper").value;
         $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              if (jsonData[i].Hypertensive == Y)
-                yes_Hyper += 1;
-              else
-                no_Hyper += 1;
+              if (jsonData[i].Hypertensive == Y) {
+                yes_Hyper += 1; }
+              else {
+                no_Hyper += 1; }
             }
           }
           //Erase all the contents in the div of the chart
@@ -257,16 +259,18 @@
 
     <script>
       function updateMorrisDonut_Diab() {
+        yes_Diab = 0;
+        no_Diab = 0;
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_Diab").value;
         $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              if (jsonData[i].Diabetic == Y)
-                yes_Diab += 1;
-              else
-                no_Diab += 1;
+              if (jsonData[i].Diabetic == Y) {
+                yes_Diab += 1; }
+              else {
+                no_Diab += 1; }
             }
           }
           //Erase all the contents in the div of the chart
