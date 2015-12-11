@@ -238,18 +238,15 @@
       function updateMorrisDonut_Hyper() {
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_Hyper").value;
-        $.getJSON('../../json/neighbor_stat_hyper.json', function(data){        
+        $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              yes_Hyper = jsonData[i].yes;
-              no_Hyper = jsonData[i].no;
-              break;
+              if (jsonData[i].Hypertensive == Y)
+                yes_Hyper += 1;
+              else
+                no_Hyper += 1;
             }
-          }
-          // We didn't find the specific patientID in the list of all the patients
-          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
-            alert ("This Location does not exist, please modify your input.");
           }
           //Erase all the contents in the div of the chart
           document.getElementById("MorrisDonutChart_Hyper").innerHTML = "";
@@ -262,18 +259,15 @@
       function updateMorrisDonut_Diab() {
         var jsonData;
         var patient_Location = document.getElementById("txtSel_Location_Diab").value;
-        $.getJSON('../../json/neighbor_stat_diab.json', function(data){        
+        $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              yes_Diab = jsonData[i].yes;
-              no_Diab = jsonData[i].no;
-              break;
+              if (jsonData[i].Diabetic == Y)
+                yes_Diab += 1;
+              else
+                no_Diab += 1;
             }
-          }
-          // We didn't find the specific patientID in the list of all the patients
-          if ((i==jsonData.length) && (jsonData[i-1].patient_Location!=patient_Location)) {
-            alert ("This Location does not exist, please modify your input.");
           }
           //Erase all the contents in the div of the chart
           document.getElementById("MorrisDonutChart_Diab").innerHTML = "";
@@ -287,11 +281,11 @@
       var good_General=0;
       var normal_General=0;
       var bad_General=0;
-	  var Donut_General;
+	    var Donut_General;
 			
       var yes_Hyper=0;
       var no_Hyper=0;
-	  var Donut_Hyper;
+	    var Donut_Hyper;
 	  
       var yes_Diab=0;
       var no_Diab=0;
