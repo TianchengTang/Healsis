@@ -218,7 +218,6 @@
         var patient_Location = document.getElementById("txtSel_Location_General").value;
         $.getJSON('../../json/patients_HScore.json', function(data){        
           jsonData = data;
-          confirm(jsonData[0].HLevel);
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
               if (jsonData[i].HLevel == "A") {
