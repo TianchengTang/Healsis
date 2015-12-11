@@ -244,7 +244,7 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              if (jsonData[i].Hypertensive == Y) {
+              if (jsonData[i].Hypertensive == "Y") {
                 yes_Hyper += 1; }
               else {
                 no_Hyper += 1; }
@@ -267,7 +267,7 @@
           jsonData = data;
           for (var i = 0; i < jsonData.length; i++) {
             if (jsonData[i].patient_Location == patient_Location) {
-              if (jsonData[i].Diabetic == Y) {
+              if (jsonData[i].Diabetic == "Y") {
                 yes_Diab += 1; }
               else {
                 no_Diab += 1; }
